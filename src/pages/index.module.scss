@@ -1,0 +1,54 @@
+$color: #f3f3f3;
+$stroke-width: 5px;
+$size: 136px;
+
+@import url("https://fonts.googleapis.com/css2?family=Faustina:wght@600&display=swap");
+
+.logo {
+  width: 100%;
+  display: flex;
+  font-size: 120px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.5);
+  position: relative;
+
+  text {
+    stroke-width: $stroke-width;
+    stroke-dasharray: 900;
+    stroke-dashoffset: -900;
+    animation: text 4s forwards 1;
+    animation-delay: 1s;
+  }
+
+  .underline {
+    stroke-dasharray: 900;
+    stroke-dashoffset: 900;
+    animation: underline 4s forwards 1;
+    animation-delay: 5s;
+  }
+}
+
+@keyframes text {
+  75% {
+    fill: transparent;
+    stroke-dashoffset: 0;
+    stroke-width: $stroke-width;
+  }
+  100% {
+    fill: $color;
+    stroke-dashoffset: 0;
+    stroke-width: 0;
+  }
+}
+
+@keyframes underline {
+  75% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
