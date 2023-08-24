@@ -1,0 +1,78 @@
+{
+    "eventsinfo ": 
+    [
+        {
+            "name": "Stellar-Hunt",
+            "imageURI": "./img/stellarhunt.jpg",
+            "date": "16th September 2023",
+            "time": "",
+            "location": "",
+            "description": "Travel across Galaxies to find your destined treasure amongst the stars!",
+            "rules": []
+        },
+        {   
+            "name": "Memescape",
+            "imageURI": "./img/memescape.jpeg",
+            "date": "16th September 2023",
+            "time": "",
+            "location": "",
+            "description": "Meme Creation",
+            "rules": []
+        },
+        {
+            "name": "Pitch-Black",
+            "imageURI": "./img/pitchblack.png",
+            "date": "16th September 2023",
+            "time": "",
+            "location": "",
+            "description": " Business pitch ",
+            "rules": []
+        },
+        {
+            "name": "Cosmic Chronicles",
+            "imageURI": "./img/cosmicchronicles.png",
+            "date": "16th September 2023",
+            "time": "",
+            "location": "",
+            "description": "Paper Presentation",
+            "rules": []
+        },
+        {
+            "name": "Space Complexity",
+            "imageURI": "./img/spacecomplexity.jpg",
+            "date": "16th September 2023",
+            "time": "",
+            "location": "",
+            "description": "Code Debugging",
+            "rules": []
+        },
+        {
+            "name": "Celestial Canvas",
+            "imageURI": "./img/celestialcanvas.jpg",
+            "date": "16th September 2023",
+            "time": "",
+            "location": "",
+            "description": "UI Design",
+            "rules": []
+        },
+        {
+            "name": "Tesseract",
+            "imageURI": "./img/tesseract.jpg",
+            "date": "16th September 2023",
+            "time": "",
+            "location": "",
+            "description": "Tech Charades",
+            "rules": []
+        },
+        {
+            "name": "Constellation",
+            "imageURI": "./img/cosntellation.jpg",
+            "date": "16th September 2023",
+            "time": "",
+            "location": "",
+            "description": "Technical Connection",
+            "rules": []
+        }
+        
+    ]
+}
