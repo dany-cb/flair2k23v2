@@ -4,7 +4,7 @@ import styles from "../styles/hero.module.css";
 const Hero = () => {
   return (
     <>
-      <main>
+      <main id="home">
         <div className={styles["hero-container"]}>
           <video
             autoPlay
@@ -14,8 +14,6 @@ const Hero = () => {
           >
             <source src="/space-theme.webm" type="video/webm" />
           </video>
-<<<<<<< HEAD
-=======
           {/* <div class="hero-black-hole-stars">
             <div
               style="animation-duration:7.630824567743058s;animation-delay:2.1623895916078495s;top:75.02474307543298%;left:5.0763504191329245%;--transform:translate(283.0189923594626px, -157.65588137522778px)"
@@ -418,7 +416,6 @@ const Hero = () => {
               q:key="99"
             ></div>
           </div> */}
->>>>>>> 52977cf92b4687d1dd84e11a19e18b9fd36143ea
         </div>
       </main>
     </>
