@@ -1,0 +1,58 @@
+/* Hero.module.css */
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+
+.hero-background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* styles.module.css */
+
+.hero-black-hole-stars {
+  height: 700px;
+  left: 50%;
+  -webkit-mask-image: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(217, 217, 217, 0) 27.08%,
+    #d9d9d9 47.92%,
+    rgba(217, 217, 217, 0.8) 75%,
+    rgba(217, 217, 217, 0) 100%
+  );
+  mask-image: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(217, 217, 217, 0) 27.08%,
+    #d9d9d9 47.92%,
+    rgba(217, 217, 217, 0.8) 75%,
+    rgba(217, 217, 217, 0) 100%
+  );
+  -webkit-mask-position: 0 0;
+  mask-position: 0 0;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translateZ(0) translate(-50%, -50%);
+  width: 700px;
+}
+
+@keyframes heroBlackHoleStarsRotate {
+  0% {
+    transform: translateZ(0) translate(-50%, -50%) rotate(0);
+  }
+  100% {
+    transform: translateZ(0) translate(-50%, -50%) rotate(-360deg);
+  }
+}

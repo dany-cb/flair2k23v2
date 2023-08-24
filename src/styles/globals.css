@@ -18,10 +18,17 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #030014;
+}
+
+.header {
+  padding: 0 20px;
+  -webkit-backdrop-filter: blur(16px);
+  /* backdrop-filter: blur(16px); */
+  background: rgba(3,0,20,.08);
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 10;
 }
