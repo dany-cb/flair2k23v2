@@ -14,7 +14,7 @@ const Hero = () => {
           >
             <source src="/space-theme.webm" type="video/webm" />
           </video>
-          <div class="hero-black-hole-stars">
+          {/* <div class="hero-black-hole-stars">
             <div
               style="animation-duration:7.630824567743058s;animation-delay:2.1623895916078495s;top:75.02474307543298%;left:5.0763504191329245%;--transform:translate(283.0189923594626px, -157.65588137522778px)"
               q:key="0"
@@ -415,7 +415,7 @@ const Hero = () => {
               style="animation-duration:12.350195659886253s;animation-delay:0.42961029466068057s;top:68.30433815553658%;left:83.77431716294164%;--transform:translate(-212.77819812653235px, -115.31733037988049px)"
               q:key="99"
             ></div>
-          </div>
+          </div> */}
         </div>
       </main>
     </>

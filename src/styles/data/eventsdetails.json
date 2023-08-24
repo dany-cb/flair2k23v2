@@ -1,8 +1,7 @@
-
 [
     {
         "name": "Stellar-Hunt",
-        "imageURI": "./img/stellarhunt.jpg",
+        "imageURI": "/img/stellarhunt.jpg",
         "date": "16th September 2023",
         "time": "",
         "location": "",
@@ -11,7 +10,7 @@
     },
     {   
         "name": "Memescape",
-        "imageURI": "./img/memescape.jpeg",
+        "imageURI": "/img/memescape.jpeg",
         "date": "16th September 2023",
         "time": "",
         "location": "",
@@ -20,7 +19,7 @@
     },
     {
         "name": "Pitch-Black",
-        "imageURI": "./img/pitchblack.png",
+        "imageURI": "/img/pitchblack.png",
         "date": "16th September 2023",
         "time": "",
         "location": "",
@@ -29,7 +28,7 @@
     },
     {
         "name": "Cosmic Chronicles",
-        "imageURI": "./img/cosmicchronicles.png",
+        "imageURI": "/img/cosmicchronicles.png",
         "date": "16th September 2023",
         "time": "",
         "location": "",
@@ -38,7 +37,7 @@
     },
     {
         "name": "Space Complexity",
-        "imageURI": "./img/spacecomplexity.jpg",
+        "imageURI": "/img/spacecomplexity.jpg",
         "date": "16th September 2023",
         "time": "",
         "location": "",
@@ -47,7 +46,7 @@
     },
     {
         "name": "Celestial Canvas",
-        "imageURI": "./img/celestialcanvas.jpg",
+        "imageURI": "/img/celestialcanvas.jpg",
         "date": "16th September 2023",
         "time": "",
         "location": "",
@@ -56,7 +55,7 @@
     },
     {
         "name": "Tesseract",
-        "imageURI": "./img/tesseract.jpg",
+        "imageURI": "/img/tesseract.jpg",
         "date": "16th September 2023",
         "time": "",
         "location": "",
@@ -65,7 +64,7 @@
     },
     {
         "name": "Constellation",
-        "imageURI": "./img/cosntellation.jpg",
+        "imageURI": "/img/constellation.jpg",
         "date": "16th September 2023",
         "time": "",
         "location": "",
