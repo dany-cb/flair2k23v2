@@ -3,37 +3,39 @@ import { useEffect } from "react";
 import { Inter } from "next/font/google";
 import styles from "../styles/contactus.module.css";
 
+
+
+
 const Contact = () => {
   return (
-    <div className="contact grid grid-cols-4 gap-3 text-center bg-neededcolor" >
-      <div>
-        <p className="contact py-5 ">Contact Us</p>
+    <div className={`mx-40 grid lg:grid-cols-4 sm:grid-cols-1 gap-2 flex justify-center bg-neededcolor row-span-2`}>
+      <div  className="contact py-1 row-span-2">
+        <p>
+          <img src="./img/Logo v1.png" className="h-8 mt-5"></img>
+        </p>
       </div>
-      <div>
-        <p className="contact py-5 ">@flairit@licet.ac.in</p>
+      <div className="contact py-2 row-span-1 col-span-1">
+        <p className="">Contact Us</p>
       </div>
-      <div>
-        <p className="contact py-5 ">Kabilan</p>
+      <div className="contact py-2 row-span-1 col-span-1">
+        <p>Kabilan</p>
       </div>
-      <div>
-        <p className="contact py-5 ">Akash</p>
+      <div className="contact py-2 row-span-1 col-span-1"> 
+        <p>Akash</p>
       </div>
-
-      <div>
-        <p className="contact py-5 "></p>
+      <div className="contact py-2 row-span-1 col-span-1" >
+        <p>flairit@licet.ac.in</p>
       </div>
-      <div>
-        <p className="contact py-5 "></p>
-      </div>
-      <div>
-        <p className="contact py-5 ">+91 78711 23619</p>
+      <div className="contact py-2 row-span-1 col-span-1">
+        <p>+91 78711 23619</p>
       </div>
 
-      <div>
-        <p className="contact py-5 "></p>
+      <div className="contact py-2 row-span-1 col-span-1">
+        <p>+91 74189 21212</p>
       </div>
-      
+
     </div>
+    
   );
 };
 

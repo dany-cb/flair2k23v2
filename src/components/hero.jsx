@@ -12,16 +12,24 @@ const Hero = () => {
             muted
             className={styles["hero-background-video"]}
           >
-          <source src="/space-theme.webm" type="video/webm" />
+            <source src="/space-theme.webm" type="video/webm" />
           </video>
-            <section className="mt-[14rem] flex items-center justify-center flex-col">
-              <div className="text-2xl">Your Space odyssey starts here</div>
-              <div className="mt-[12rem] sm:mt-[10rem] glasscard p-20 flex-col justify-items-center">
-                <p className="text-2xl">Department of Information Technology</p>
-                <p className="text-lg text-center my-2">organizes</p>
-                <p className="text-center text-5xl tracking-[.5rem]">FLAIR2K23</p>
-              </div>
-            </section>
+          <section className="mt-[14rem] flex items-center justify-center flex-col">
+            <p className="text-2xl">Your Space odyssey starts here</p>
+            <div className="mt-[12rem] sm:mt-[10rem] glasscard p-20 flex-col justify-items-center">
+              <p className="text-2xl">Department of Information Technology</p>
+              <p className="text-lg text-center my-2">organizes</p>
+              <p className="text-center text-5xl tracking-[.5rem]">FLAIR2K23</p>
+            </div>
+          </section>
+          <section className="-mb-[10rem] flex items-center justify-center flex-col lg:hidden">
+            <p className="text-2xl">Your Space odyssey starts here</p>
+            <div className="mt-[12rem] sm:mt-[10rem] glasscard p-20 flex-col justify-items-center">
+              <p className="text-2xl">Department of Information Technology</p>
+              <p className="text-lg text-center my-2">organizes</p>
+              <p className="text-center text-5xl tracking-[.5rem]">FLAIR2K23</p>
+            </div>
+          </section>
         </div>
       </main>
     </>

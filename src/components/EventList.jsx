@@ -8,6 +8,8 @@ const EventList = ({ backgroundImage }) => {
   console.log("the data is", events);
 
   return (
+    <>
+    <p className="flex justify-center text-5xl tracking-[.5rem] m-3">Events</p>
     <main className="flex justify-center eventsection" id="events">
       <div className="grid place-items-center gap-3 lg:grid-cols-2 sm:grid-cols-1">
         {events.map((i, index) => (
@@ -37,7 +39,9 @@ const EventList = ({ backgroundImage }) => {
           </div>
         ))}
       </div>
+      
     </main>
+    </>
   );
 };
 

@@ -6,7 +6,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <>
-      <header className="header bg-transparent-sm">
+      <header className="header">
         <nav
           className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 backdrop-filter backdrop-blur-sm "
           aria-label="Global"
@@ -16,7 +16,7 @@ const Header = () => {
               <span className="sr-only">FLAIR2K23</span>
               <img
                 className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                src="/img/Logo v1.png"
                 alt=""
               />
             </a>
@@ -57,7 +57,7 @@ const Header = () => {
                   <span className="sr-only">Your Company</span>
                   <img
                     className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                    src="/img/Logo v1.png"
                     alt=""
                   />
                 </a>

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text&display=swap');
+
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -18,11 +18,14 @@
   }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
 body {
-  color: rgb(var(--foreground-rgb));
+  /* color: rgb(var(--foreground-rgb)); */
+  color: white;
   /* background-image: linear-gradient(to bottom, #030014, #040114, #040213, #050313, #060412); */
   background: #030014;
-  font-family: 'Libre Caslon Text', serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .header {
