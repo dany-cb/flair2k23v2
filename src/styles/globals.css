@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -18,14 +16,18 @@
   }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+
+html {
+  scroll-behavior: smooth !important;
+}
 
 body {
   /* color: rgb(var(--foreground-rgb)); */
   color: white;
   /* background-image: linear-gradient(to bottom, #030014, #040114, #040213, #050313, #060412); */
   background: #030014;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .header {
@@ -40,12 +42,12 @@ body {
   z-index: 10;
 }
 
-.glasscard{
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(17, 25, 40, 0.42);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
+.glasscard {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.42);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
 /* .eventsection{

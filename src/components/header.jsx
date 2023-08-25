@@ -14,11 +14,7 @@ const Header = () => {
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">FLAIR2K23</span>
-              <img
-                className="h-8 w-auto"
-                src="/img/Logo v1.png"
-                alt=""
-              />
+              <img className="h-8 w-auto" src="/img/Logo v1.png" alt="" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -35,11 +31,11 @@ const Header = () => {
             <a href="#events" className="text-sm font-semibold leading-6">
               Events
             </a>
-            <a href="#" className="text-sm font-semibold leading-6">
+            <a href="#contact" className="text-sm font-semibold leading-6">
               Contact us
             </a>
             <a href="#" className="text-sm font-semibold leading-6">
-              FAQ
+              About us
             </a>
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -51,15 +47,15 @@ const Header = () => {
         {mobileMenuOpen && (
           <div className="lg:hidden">
             <div className="fixed inset-0 z-10" />
-            <div className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[#030014] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
               <div className="flex items-center justify-between">
-                <a href="#" className="-m-1.5 p-1.5">
+                <a
+                  href="#"
+                  className="-m-1.5 p-1.5"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
                   <span className="sr-only">Your Company</span>
-                  <img
-                    className="h-8 w-auto"
-                    src="/img/Logo v1.png"
-                    alt=""
-                  />
+                  <img className="h-8 w-auto" src="/img/Logo v1.png" alt="" />
                 </a>
                 <button
                   type="button"
@@ -79,20 +75,23 @@ const Header = () => {
                     <a
                       href="#events"
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
+                      onClick={() => setMobileMenuOpen(false)}
                     >
                       Events
                     </a>
                     <a
-                      href="#"
+                      href="#contact"
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
+                      onClick={() => setMobileMenuOpen(false)}
                     >
                       Contact us
                     </a>
                     <a
                       href="#"
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
+                      onClick={() => setMobileMenuOpen(false)}
                     >
-                      FAQ
+                      About Us
                     </a>
                   </div>
                 </div>
