@@ -24,7 +24,7 @@ export default function Header() {
         <a href="#" className={styles.navItem}>
           Home
         </a>
-        <a href="#" className={styles.navItem}>
+        <a href="/events" className={styles.navItem}>
           Events
         </a>
         <a href="#" className={styles.navItem}>
