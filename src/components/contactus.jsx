@@ -31,15 +31,15 @@ const Contact = () => {
             </li>
             <li>
               <a
-                href="tel:+91 78711 23619"
+                href="tel:+917871123619"
                 className="flex mr-4 hover:underline md:mr-6 "
               >
                 Kabilan <AiTwotonePhone className="ms-1 mt-[0.2rem]" />
               </a>
             </li>
             <li>
-              <a href="tel:+91 74189 21212" className="flex hover:underline">
-                Akash Charles <AiTwotonePhone className="ms-1 mt-[0.2rem]" />
+              <a href="tel:+916385796779" className="flex hover:underline">
+                Akash Nebi <AiTwotonePhone className="ms-1 mt-[0.2rem]" />
               </a>
             </li>
           </ul>
