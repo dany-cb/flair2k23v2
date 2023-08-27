@@ -1,11 +1,20 @@
 [
   {
+    "name": "Cosmic Chronicles",
+    "imageURI": "/img/cosmicchronicles.png",
+    "date": "16th September 2023",
+    "time": "",
+    "location": "",
+    "description": "Paper Presentation",
+    "rules": []
+  },
+  {
     "name": "Stellar-Hunt",
     "imageURI": "/img/stellarhunt.jpg",
     "date": "16th September 2023",
     "time": "",
     "location": "",
-    "description": "Find your destined treasure!",
+    "description": "Hunt your celestial treasure!",
     "rules": []
   },
   {
@@ -24,15 +33,6 @@
     "time": "",
     "location": "",
     "description": " Business pitch ",
-    "rules": []
-  },
-  {
-    "name": "Cosmic Chronicles",
-    "imageURI": "/img/cosmicchronicles.png",
-    "date": "16th September 2023",
-    "time": "",
-    "location": "",
-    "description": "Paper Presentation",
     "rules": []
   },
   {
