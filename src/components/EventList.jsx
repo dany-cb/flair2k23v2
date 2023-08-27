@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import jsonData from "../styles/data/eventsdetails.json";
-import styles from "../styles/EventCard.module.css";
-import Image from "next/image";
+import Link from "next/link";
 
-const EventList = ({ backgroundImage }) => {
+const EventList = () => {
   const [events, setEvents] = useState(jsonData);
   console.log("the data is", events);
 
@@ -13,7 +12,7 @@ const EventList = ({ backgroundImage }) => {
         Events
       </p>
       <main className="flex justify-center eventsection" id="events">
-        <div className="grid place-items-center gap-3 lg:grid-cols-2 sm:grid-cols-1">
+        <div className="grid place-items-center gap-3 lg:grid-cols-3 sm:grid-cols-1">
           {events.map((i, index) => (
             <div
               className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
@@ -34,9 +33,11 @@ const EventList = ({ backgroundImage }) => {
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                   {i.description}
                 </p>
-                <button className="py-2 px-4 border border-gray-400 rounded shadow">
-                  Coming Soon
-                </button>
+                <Link href="#">
+                  <button className="py-2 px-4 border border-gray-400 rounded shadow">
+                    Details <span aria-hidden="true">&rarr;</span>
+                  </button>
+                </Link>
               </div>
             </div>
           ))}

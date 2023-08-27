@@ -53,3 +53,15 @@ body {
 /* .eventsection{
   background-image: linear-gradient(to bottom, #030014, #040114, #040213, #050313, #060412);
 } */
+
+.modalfade {
+  animation: fadeIn 5s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
