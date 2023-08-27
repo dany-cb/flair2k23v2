@@ -1,12 +1,10 @@
 import React from "react";
 import styles from "../styles/hero.module.css";
-import Start from "./modal";
 
 const Hero = () => {
   return (
     <>
-      <main id="home z-40">
-        <Start />
+      <main id="home">
         <div className={styles["hero-container"]}>
           <video
             autoPlay
