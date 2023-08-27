@@ -33,7 +33,9 @@ const EventList = () => {
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                   {i.description}
                 </p>
-                <Link href="#">
+                <Link
+                  href={`/events/${i.name.toLowerCase().replace(/ /g, "-")}`}
+                >
                   <button className="py-2 px-4 border border-gray-400 rounded shadow">
                     Details <span aria-hidden="true">&rarr;</span>
                   </button>
