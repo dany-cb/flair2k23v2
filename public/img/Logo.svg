@@ -1,0 +1,34 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1101.7 434.66">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        font-size: 350px;
+        font-family: IntegralCF-Regular, Integral CF;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        letter-spacing: -0.02em;
+      }
+
+      .cls-4 {
+        font-size: 130px;
+        font-family: Spac3Slim, Spac3 ;
+        letter-spacing: 0.25em;
+      }
+    </style>
+  </defs>
+  <text class="cls-1" transform="translate(0 297.5)">f</text>
+  <text class="cls-2" transform="translate(233.14 297.78)">l</text>
+  <text class="cls-1" transform="translate(468.31 297.78)">a</text>
+  <text class="cls-1" transform="translate(757.31 297.78)">i</text>
+  <text class="cls-1" transform="translate(847.08 297.78)">r</text>
+  <rect class="cls-3" x="187.73" y="52.28" width="99" height="49"/>
+  <rect class="cls-3" x="430.73" y="248.98" width="80" height="48.8"/>
+  <rect class="cls-3" x="712.73" y="249.73" width="113" height="48.05"/>
+  <rect class="cls-3" x="795.73" y="52.78" width="124.68" height="48.5"/>
+  <text class="cls-4" transform="translate(354.59 408.13)">2k23</text>
+</svg>

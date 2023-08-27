@@ -2,31 +2,32 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./Header.module.css";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Header() {
   const [closed, setClosed] = useState(true);
   return (
-    <div className={styles.nav}>
+    <motion.div className={styles.nav + " m-2"}>
       <Link
         href="/"
         aria-current="page"
-        className="logo-link w-inline-block w--current"
+        className="min-w-[50px] max-w-[170px] w-[25%] absolute left-0 top-0"
       >
         <Image
-          src="https://placehold.co/100x50"
+          src="/img/Licet.png"
           loading="eager"
           alt="diagram logo"
-          width={100}
-          height={50}
+          width={500}
+          height={0}
         />
       </Link>
-      <div className={styles.navList}>
+      <div className={styles.navList + " mt-2"}>
         <a href="#" className={styles.navItem}>
           Home
         </a>
-        <a href="/events" className={styles.navItem}>
+        <Link href="/events" className={styles.navItem}>
           Events
-        </a>
+        </Link>
         <a href="#" className={styles.navItem}>
           Contact us
         </a>
@@ -34,7 +35,7 @@ export default function Header() {
           FAQ
         </a>
       </div>
-      <div className={styles.navButtons}>
+      <div className={styles.navButtons + " absolute right-4 top-1"}>
         <div
           onClick={() => setClosed((cur) => !cur)}
           className={`${styles["header-toggle"]} ${
@@ -62,6 +63,6 @@ export default function Header() {
           <a className={styles["header-nav-link"]}>FAQ</a>
         </li>
       </ul>
-    </div>
+    </motion.div>
   );
 }

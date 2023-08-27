@@ -1,4 +1,4 @@
-import Events from "../common/components/Events";
+import Events from "../../common/components/Events";
 
 export default function Home() {
   return (

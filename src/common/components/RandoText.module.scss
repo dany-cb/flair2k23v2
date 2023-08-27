@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+
+.rando-text {
+  font-family: "Major Mono Display", monospace;
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin: 0;
+  padding: 0;
+  margin-top: 40vh;
+  animation: fade-in 1s ease-in-out;
+}
