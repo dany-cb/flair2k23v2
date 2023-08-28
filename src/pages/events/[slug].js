@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Header from "../../components/Header";
+import Header from "../../components/header";
 import { useRouter } from "next/router";
 import styles from "../../styles/hero.module.css";
 
