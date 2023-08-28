@@ -1,11 +1,10 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { useRouter } from 'next/router'
-
+import { useRouter } from "next/router";
 
 const Start = () => {
   const [modal, setModal] = useState(true);
-  const router = useRouter()
+  const router = useRouter();
 
   // useEffect(()=>{
   //   if(localStorage.getItem('modalshow')){
@@ -18,9 +17,7 @@ const Start = () => {
     <>
       <main className="z-50">
         <div
-          className={`modalfade fixed z-10 overflow-y-auto top-0 w-full left-0 ${
-            modal ? "block" : "hidden"
-          }`}
+          className={`modalfade fixed z-10 overflow-y-auto top-0 w-full left-0 hidden`}
           id="modal"
         >
           <div className="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
@@ -60,7 +57,12 @@ const Start = () => {
                       >
                         Close
                       </button>
-                      <button className="py-2 px-4 border border-gray-400 rounded shadow" onClick={()=>{router.push("events/cosmic-chronicles")}}>
+                      <button
+                        className="py-2 px-4 border border-gray-400 rounded shadow"
+                        onClick={() => {
+                          router.push("events/cosmic-chronicles");
+                        }}
+                      >
                         Register Soon!
                       </button>
                     </div>

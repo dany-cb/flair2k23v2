@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "../../components/header";
-import { Inter } from 'next/font/google'
+import { Inter } from "next/font/google";
 import { useRouter } from "next/router";
 import styles from "../../styles/hero.module.css";
 
@@ -108,7 +108,7 @@ Winners: The top 3 designs will win attractive prizes and recognition during the
 `,
   },
   {
-    name: "Memescape",
+    name: "Buzzinga",
     imageURI: "/img/memescape.jpeg",
     date: "16th September 2023",
     time: "1:30 pm to 3:00 pm",
@@ -281,7 +281,7 @@ The judges decision will be final
   },
 ];
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 export default function EventPage() {
   const [events, setEvents] = useState(jsonData);
   const [eventDeets, setEventDeets] = useState(null);
@@ -303,9 +303,14 @@ export default function EventPage() {
       <main className={`bg-fixed flex justify-center ${inter.className}`}>
         <Header />
         <div className=" fixed top-0 left-0 w-full h-full z-0">
-        <video autoPlay loop muted className={styles["hero-background-video" ]}>
-          <source src="/space-theme.webm" type="video/webm" />
-        </video>
+          <video
+            autoPlay
+            loop
+            muted
+            className={styles["hero-background-video"]}
+          >
+            <source src="/space-theme.webm" type="video/webm" />
+          </video>
         </div>
         {eventDeets && (
           <div className="flex-col justify-center items-center absolute top-[80px]">
