@@ -29,13 +29,13 @@ const Header = () => {
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
-            <Link href="/#events" className="text-sm font-semibold leading-6">
+            <Link href="/#events" className="text-md font-semibold leading-6">
               Events
             </Link>
-            <Link href="/#contact" className="text-sm font-semibold leading-6">
+            <Link href="/#contact" className="text-md font-semibold leading-6">
               Contact us
             </Link>
-            <Link href="/" className="text-sm font-semibold leading-6">
+            <Link href="https://licet.ac.in/information-technology/" className="text-md font-semibold leading-6">
               About us
             </Link>
           </div>
@@ -88,7 +88,7 @@ const Header = () => {
                       Contact us
                     </Link>
                     <Link
-                      href="/"
+                      href="https://licet.ac.in/information-technology/"
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
                       onClick={() => setMobileMenuOpen(false)}
                     >

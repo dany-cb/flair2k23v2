@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from 'next/router'
 
@@ -6,6 +6,13 @@ import { useRouter } from 'next/router'
 const Start = () => {
   const [modal, setModal] = useState(true);
   const router = useRouter()
+
+  // useEffect(()=>{
+  //   if(localStorage.getItem('modalshow')){
+  //     setModal(false);
+  //     localStorage.setItem('modalshow',false);
+  //   }
+  // },[modal])
 
   return (
     <>

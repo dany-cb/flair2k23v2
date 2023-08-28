@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "../../components/header";
+import { Inter } from 'next/font/google'
 import { useRouter } from "next/router";
 import styles from "../../styles/hero.module.css";
 
@@ -18,33 +19,33 @@ const jsonData = [
       "A competition to enhance your ability in the art of academic writing or making papers on your project or research works and present it in front of the jury.",
     rules: `
 Team:
-1. Team of max 3 members.
-2. Teams can have participants from different institutions.
+  1. Team of max 3 members.
+  2. Teams can have participants from different institutions.
 
 Abstract & Paper:
-1. The abstract is limited to 250 words.
-2. Submitted papers must be in IEEE format.
-3. Paper length is limited to 6 pages and must be in .pdf, .docx, or .doc formats.
-4. Papers must not be published anywhere or be under consideration for publication in any journal or conference. 
-5. Participating teams should not register for the same paper in multiple departments. 
+  1. The abstract is limited to 250 words.
+  2. Submitted papers must be in IEEE format.
+  3. Paper length is limited to 6 pages and must be in .pdf, .docx, or .doc formats.
+  4. Papers must not be published anywhere or be under consideration for publication in any journal or conference. 
+  5. Participating teams should not register for the same paper in multiple departments. 
 
 Presentation:
-6. 7 min presentation 3 min Q/A
-7. Plagiarism is not allowed. Original works only!
-8. Foul Language is not encouraged.
-9. Presentation should be in English
+  6. 7 min presentation 3 min Q/A
+  7. Plagiarism is not allowed. Original works only!
+  8. Foul Language is not encouraged.
+  9. Presentation should be in English
 
 Notes :
-1. Registration closes by 5th September 2023.
-2. Email your ABSTRACT to flairit@licet.ac.in (Subject: “Abstract- TITLE” eg: “Abstract- Smart Garbage Management with IOT”) on or before 5th September 2023.
-3. By 8th September,  the shortlisted teams will be informed (via email and phone call)
-4. Shortlisted teams must submit the PPT slides and PAPER by 11 September 2023.
-5. Email your PAPERS and PPTs to flairit@licet.ac.in (Subject: “Paper- TITLE” eg: “Paper- Smart Garbage Management with IOT”).
-6. All emails must contain:- Name of authors, College Names, Departments, Author’s Phone Numbers and Email Addresses.
-7. Shortlisted teams must present on 16 September 2023.
-8. Bring a hard copy of the PPT and Paper.
-9. The top 3 papers will be selected as winners.
-10. The winning team will compete with other departments for the overall 
+  1. Registration closes by 5th September 2023.
+  2. Email your ABSTRACT to flairit@licet.ac.in (Subject: “Abstract- TITLE” eg: “Abstract- Smart Garbage Management with IOT”) on or before 5th September 2023.
+  3. By 8th September,  the shortlisted teams will be informed (via email and phone call)
+  4. Shortlisted teams must submit the PPT slides and PAPER by 11 September 2023.
+  5. Email your PAPERS and PPTs to flairit@licet.ac.in (Subject: “Paper- TITLE” eg: “Paper- Smart Garbage Management with IOT”).
+  6. All emails must contain:- Name of authors, College Names, Departments, Author’s Phone Numbers and Email Addresses.
+  7. Shortlisted teams must present on 16 September 2023.
+  8. Bring a hard copy of the PPT and Paper.
+  9. The top 3 papers will be selected as winners.
+  10. The winning team will compete with other departments for the overall 
  
   `,
   },
@@ -58,12 +59,12 @@ Notes :
     description: "Hunt your celestial treasure!",
     rules: `
 Phases:
-1. Wormhole Passage: Traverse the unknown through complex puzzles. Obtain Quantum Emblems to unlock the next phase.
-2. Gravity Labyrinth: Navigate shifting terrains and complete tasks to gain Quantum Emblems for your journey.
-3. Time Dilation Enigma: Solve temporal riddles to gather Quantum Emblems and advance.
-4. Black Hole Conundrum: Confront intellectual challenges. Quantum Emblems are your reward for mastering this phase.
-5. Exoplanet Exploration: Discover habitable worlds and gather Quantum Emblems, bringing humanity closer to salvation.
-6. Final Frontier: Engage in the ultimate test, where Quantum Emblems will determine humanity's destiny.
+  1. Wormhole Passage: Traverse the unknown through complex puzzles. Obtain Quantum Emblems to unlock the next phase.
+  2. Gravity Labyrinth: Navigate shifting terrains and complete tasks to gain Quantum Emblems for your journey.
+  3. Time Dilation Enigma: Solve temporal riddles to gather Quantum Emblems and advance.
+  4. Black Hole Conundrum: Confront intellectual challenges. Quantum Emblems are your reward for mastering this phase.
+  5. Exoplanet Exploration: Discover habitable worlds and gather Quantum Emblems, bringing humanity closer to salvation.
+  6. Final Frontier: Engage in the ultimate test, where Quantum Emblems will determine humanity's destiny.
 
 1. Technology Protocol: All personal electronic devices (smartphones, smartwatches, laptops) are strictly prohibited during the mission.
 2. Mission Equipment: Essential tools will be provided to assist your mission.
@@ -280,6 +281,7 @@ The judges decision will be final
   },
 ];
 
+const inter = Inter({ subsets: ['latin'] })
 export default function EventPage() {
   const [events, setEvents] = useState(jsonData);
   const [eventDeets, setEventDeets] = useState(null);
@@ -298,7 +300,7 @@ export default function EventPage() {
   }, [ename]);
   return (
     <>
-      <main className="bg-fixed flex justify-center">
+      <main className={`bg-fixed flex justify-center ${inter.className}`}>
         <Header />
         <div className=" fixed top-0 left-0 w-full h-full z-0">
         <video autoPlay loop muted className={styles["hero-background-video" ]}>
@@ -311,7 +313,7 @@ export default function EventPage() {
               <div className="my-3 m-4 uppercase text-xl font-bold">
                 {eventDeets.name}
               </div>
-              <pre className="lg:text-[17px] md:text-[15px] text-[13px] pl-5">
+              <pre className="lg:text-[17px] md:text-[15px] text-[13px] pl-5 font-inherit">
                 {eventDeets.rules}
               </pre>
               <div className="space-y-3">

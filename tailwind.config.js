@@ -16,6 +16,9 @@ module.exports = {
     colors: {
       neededcolor: '#030014'
     },
+    fontFamily:{
+      inherit: 'inherit'
+    }
   },
   plugins: [],
 }

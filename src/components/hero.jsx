@@ -17,8 +17,13 @@ const Hero = () => {
             <source src="/space-theme.webm" type="video/webm" />
           </video>
           <section className="flex items-center justify-center flex-col">
-            <p className="text-2xl lg:text-2xl md:text-2xl sm:text-xg lg:mt-[12rem] md:mt-[6rem] mt-[7rem]">
-              Your Space odyssey starts here
+            <p className="text-2xl lg:text-2xl md:text-2xl sm:text-xg lg:mt-[10.5rem] md:mt-[6rem] mt-[7rem]">
+              Your{" "}
+              <span
+              >
+                Space odyssey
+              </span>{" "}
+              starts here.
             </p>
             <div className="lg:mt-[8rem] md:mt-[2rem] glasscard lg:p-20 md:p-10 flex-col justify-items-center invisible lg:visible md:visible">
               <p className="text-2xl">Department of Information Technology</p>

@@ -12,7 +12,7 @@ const EventList = () => {
         Events
       </p>
       <main className="flex justify-center eventsection" id="events">
-        <div className="grid place-items-center gap-3 lg:grid-cols-3 sm:grid-cols-1">
+        <div className="grid place-items-center gap-7 lg:grid-cols-3 sm:grid-cols-1">
           {events.map((i, index) => (
             <div
               className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
