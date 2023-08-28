@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter } from 'next/router'
+
 
 const Start = () => {
   const [modal, setModal] = useState(true);
+  const router = useRouter()
+
   return (
     <>
       <main className="z-50">
@@ -26,11 +30,11 @@ const Start = () => {
                 style={{ backgroundColor: "#030014" }}
               >
                 <div className="flex flex-col items-center rounded-lg shadow md:flex-row md:max-w-xl">
-                  <img
+                  {/* <img
                     className="object-cover w-full rounded-t-lg h-80 md:rounded-none md:rounded-l-lg"
                     src="/img/cosmicchronicles.png"
                     alt=""
-                  />
+                  /> */}
                   <div className="flex flex-col justify-between p-4 leading-normal space-y-4">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                       COSMIC CHRONICALS
@@ -49,7 +53,7 @@ const Start = () => {
                       >
                         Close
                       </button>
-                      <button className="py-2 px-4 border border-gray-400 rounded shadow">
+                      <button className="py-2 px-4 border border-gray-400 rounded shadow" onClick={()=>{router.push("events/cosmic-chronicles")}}>
                         Register Soon!
                       </button>
                     </div>

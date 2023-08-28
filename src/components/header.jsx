@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { RiCloseFill } from "react-icons/ri";
+import Link from "next/link";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -12,10 +13,10 @@ const Header = () => {
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">FLAIR2K23</span>
               <img className="h-8 w-auto" src="/img/Logo v1.png" alt="" />
-            </a>
+            </Link>
           </div>
           <div className="flex lg:hidden">
             <button
@@ -28,15 +29,15 @@ const Header = () => {
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
-            <a href="#events" className="text-sm font-semibold leading-6">
+            <Link href="/#events" className="text-sm font-semibold leading-6">
               Events
-            </a>
-            <a href="#contact" className="text-sm font-semibold leading-6">
+            </Link>
+            <Link href="/#contact" className="text-sm font-semibold leading-6">
               Contact us
-            </a>
-            <a href="#" className="text-sm font-semibold leading-6">
+            </Link>
+            <Link href="/" className="text-sm font-semibold leading-6">
               About us
-            </a>
+            </Link>
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a href="#" className="text-sm font-semibold leading-6">
@@ -72,27 +73,27 @@ const Header = () => {
               <div className="mt-6 flow-root">
                 <div className="-my-6 divide-y divide-gray-500/10">
                   <div className="space-y-2 py-6">
-                    <a
-                      href="#events"
+                    <Link
+                      href="/#events"
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Events
-                    </a>
-                    <a
-                      href="#contact"
+                    </Link>
+                    <Link
+                      href="/#contact"
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Contact us
-                    </a>
-                    <a
-                      href="#"
+                    </Link>
+                    <Link
+                      href="/"
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       About Us
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
