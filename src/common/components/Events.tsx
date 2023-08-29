@@ -22,7 +22,7 @@ export default function Events() {
   const itemsRef = useRef([]);
   return (
     <>
-      <div className="group z-40 sticky top-1/3 mt-[18%] right-0 mr-5 flex-col justify-center h-0">
+      <div className="group z-40 sticky top-1/3 mt-[18%] right-0 mr-1 lg:mr-5 flex-col justify-center h-0 select-none">
         {elist.map((i, index) => (
           <div key={index} className="ml-auto space-x-2 w-fit p-1">
             <a

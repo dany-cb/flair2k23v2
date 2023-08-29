@@ -11,7 +11,7 @@ export default function VidPlayback({ link }) {
   const vid = useRef(null);
   return (
     <video
-      className="object-none min-w-full min-h-full"
+      className="object-none min-w-full min-h-full pointer-events-none"
       height={size.height}
       muted
       preload="metadata"

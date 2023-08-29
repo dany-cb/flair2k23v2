@@ -17,7 +17,10 @@ export default function RandoText({ text, delay }) {
   }, []);
 
   return (
-    <div className={`${styles["rando-text"]} flex-col flex`} ref={element}>
+    <div
+      className={`${styles["rando-text"]} flex-col flex select-none`}
+      ref={element}
+    >
       {start ? (
         <RandomReveal
           isPlaying

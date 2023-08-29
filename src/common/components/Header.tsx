@@ -7,7 +7,11 @@ import { motion } from "framer-motion";
 export default function Header() {
   const [closed, setClosed] = useState(true);
   return (
-    <motion.div className={styles.nav + " m-2"}>
+    <motion.div
+      className={
+        styles.nav + " pt-2 backdrop-filter backdrop-blur-sm select-none"
+      }
+    >
       <Link
         href="/"
         aria-current="page"
