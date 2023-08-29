@@ -1,23 +1,27 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { RandomReveal } from "react-random-reveal";
 import styles from "./RandoText.module.scss";
+import { inView } from "framer-motion";
 
-const charSet =
-  "☍⋏⍜⍙⊑⟟⌇⌿⍜⍙⟒⍀⏚⟒☊⏃⎍⌇⟒⏁⊑⟟⌇⌇⎍⌿⟒⍀⌇⍜⌰⎅⟟⟒⍀⌰⏃⋏⎅⌇⍙⟟⏁⊑⏃⏚⍜⍜⋔⎅⟒⏃⌰⟟⋏☌⋔⏃⌇⌇⟟⎐⟒⏃⍀⟒⏃⎅⏃⋔⏃☌⟒⏁⍜⏃⌰⌰⍜⎎⏁⊑⟒⌇⟒☌⍀⍜⎍⋏⎅☌⎍⊬⌇⏃⍀⍜⎍⋏⎅⊑⟟⋔⏁⊑⟒⋏⟊⎍⋔⌿⌇⏁⍜⏁⊑⟒⋏⟒⌖⏁⏁⏃⍀☌⟒⏁⟟⋏⍀⏃⋏☌⟒⌰⏃⋏⎅⟟⋏☌⍙⟟⏁⊑⏃⋏⍜⏁⊑⟒⍀⏚⍜⍜⋔!⟟⎎⊑⟒'⌇⋏⍜⏁⟊⎍⟒⊑⏃⌇⎐⟒⍀⊬⊑⟟☌⊑⊑⟟⏁⌿⍜⟟⋏⏁⌇⎎⍜⍀⏓⟒⌰⟟⌖⟟⍀⏚⎍⏁☊⏃⋏⌇⏁⟟⌰⌰⏚⟒⎅⟒⎎⟒⏃⏁⟒⎅⏚⊬⊑⟟☌⊑⎅⏃⋔⏃☌⟒⎍⋏⟟⏁⌇⎅⎍⟒⏁⍜⊑⟟⌇⌇⌰⍜⍙⏃⏁⏁⏃☊☍".split(
-    ""
-  );
-export default function RandoText({ text }) {
+const charSet = "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψω".split("");
+export default function RandoText({ text, delay }) {
   const [start, setStart] = useState(false);
+  const element = useRef(null);
+
   useEffect(() => {
-    setStart(true);
+    inView(element.current, () => {
+      setTimeout(() => {
+        setStart(true);
+      }, delay * 1000);
+    });
   }, []);
 
   return (
-    <div className={`${styles["rando-text"]} flex-col flex`}>
+    <div className={`${styles["rando-text"]} flex-col flex`} ref={element}>
       {start ? (
         <RandomReveal
           isPlaying
-          duration={2}
+          duration={3}
           characters={text}
           characterSet={charSet}
           revealEasing="linear"

@@ -1,6 +1,6 @@
 import Header from "../common/components/Header";
 import Footer from "../common/components/Footer";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import HeroPlayback from "../common/components/HeroPlayback";
 import RandoText from "../common/components/RandoText";
 import { motion } from "framer-motion";
@@ -34,24 +34,50 @@ const titleV = {
   },
 };
 
+let checkScroll = true;
+
 export default function Home() {
+  const oldScroll = useRef(0);
+
+  const onScroll = useCallback((event) => {
+    const { scrollY, innerHeight } = window;
+    if (checkScroll) {
+      if (scrollY > oldScroll.current && scrollY > innerHeight) {
+        showHeader(false);
+      } else {
+        showHeader(true);
+      }
+      oldScroll.current = scrollY;
+      setTimeout(() => {
+        checkScroll = true;
+      }, 100);
+    }
+  }, []);
+
+  useEffect(() => {
+    //add eventlistener to window
+    window.addEventListener("scroll", onScroll, { passive: true });
+    // remove event on unmount to prevent a memory leak with the cleanup
+    return () => {
+      window.removeEventListener("scroll", onScroll, { passive: true });
+    };
+  }, []);
+
   const [title, setTitle] = useState("start");
   const [header, showHeader] = useState(false);
 
   return (
     <>
-      <div className="flex">
+      <div className="flex" id="0">
         {header ? <Header /> : null}
         <HeroPlayback />
-        <div className="max-w-7xl w-full mx-auto text-base lg:text-4xl flex flex-col items-center justify-center h-screen pb-28">
-          <div className={!header ? "invisible" : ""}>
+        <div className="max-w-7xl w-full mx-auto flex flex-col items-center justify-center h-screen pb-28 lg:pb-10">
+          <div
+            className={!header ? "invisible" : "text-sm font-bold lg:text-xl"}
+          >
             DEPARTMENT OF INFORMATION TECHNOLOGY
           </div>
-          <div
-            className={
-              !header ? "mb-5 mt-1 lg:mb-10 invisible" : "mb-5 mt-1 lg:mb-10"
-            }
-          >
+          <div className={!header ? "invisible" : "mb-8 lg:mb-10 lg:text-xl"}>
             ORGANIZES
           </div>
           <motion.div
@@ -78,12 +104,21 @@ export default function Home() {
               height={0}
               style={{
                 position: "relative",
-                width: "50%",
+                width: "60%",
                 height: "auto",
                 margin: "auto",
               }}
             />
           </motion.div>
+          <div
+            className={
+              !header
+                ? "invisible"
+                : "mt-10 font-bold text-xl border-y py-2 border-white lg:text-2xl lg:mt-14 lg:px-10 lg:py-4"
+            }
+          >
+            &quot; A rendezvous into the horizon
+          </div>
         </div>
         {/* <Footer /> */}
       </div>

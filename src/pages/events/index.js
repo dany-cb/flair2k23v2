@@ -1,10 +1,5 @@
-import Events from "../../common/components/Events";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  return (
-    <>
-      <section>this is events</section>
-      <Events />
-    </>
-  );
+export default function EventsPage() {
+  return <p></p>;
 }

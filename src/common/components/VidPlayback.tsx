@@ -1,34 +1,28 @@
-import { useState, useEffect, useRef } from "react";
-import { useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
-export default function HeroPlayback() {
-  const size = useWindowSize();
-  const vid = useRef(null);
-  const isInView = useInView(vid, { once: true });
+export default function VidPlayback({ link }) {
   useEffect(() => {
     const vidElement = vid.current;
-    if (isInView) {
+    setTimeout(() => {
       vidElement.play();
-    }
-  }, [isInView]);
+    }, 0);
+  }, []);
+  const size = useWindowSize();
+  const vid = useRef(null);
   return (
-    <>
-      <div className="w-screen h-screen absolute left-0 top-0 -z-10 overflow-hidden pointer-events-none">
-        <video
-          className="object-none min-w-full min-h-full"
-          height={size.height}
-          muted
-          preload="metadata"
-          ref={vid}
-        >
-          <source src="/vids/hero.webm" type="video/webm" />
-        </video>
-      </div>
-    </>
+    <video
+      className="object-none min-w-full min-h-full"
+      height={size.height}
+      muted
+      preload="metadata"
+      loop={true}
+      ref={vid}
+    >
+      <source src={link} type="video/webm" />
+    </video>
   );
 }
 
-// Hook
 function useWindowSize() {
   // Initialize state with undefined width/height so server and client renders match
   // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
