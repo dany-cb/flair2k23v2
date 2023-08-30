@@ -11,7 +11,7 @@ const jsonData = [
     date: " 16th September 2023",
     time: " 10:00 am to 11:30 am",
     location: "Case tools Laboratory (H23) / CIS Laboratory (J14)",
-    organizers: "Ashik S and Rithika R  ( Contact No : 9876543210 )",
+    organizers: "Ashik S and Rithika R  ( Contact No : 9445387601 )",
     description: "Paper Presentation",
     registerationlink:
       "https://docs.google.com/forms/d/e/1FAIpQLSfrG7uSLaSLP3EHutd59-OCYY4SsMLoj0X-O1Eiwgp0ppo6Ew",
@@ -58,7 +58,7 @@ Notes :
     date: "16th September 2023",
     time: "1:30 pm to 3:00 pm",
     location: "RDBMS (A21)",
-    organizers: "Regis R and Arul Danica ( Contact : 9876543210) ",
+    organizers: "Regis R and Arul Danica ( Contact : 9150206627 ) ",
     description: "Hunt your celestial treasure!",
     rules: `
 Rules:
@@ -89,8 +89,7 @@ Event Guidelines:
     date: "16th September 2023",
     time: "11:00 am to 12:30 pm",
     location: "RDBMS (A21) ",
-    organizers:
-      "Keerthanaa B and Nadheedha S ( Contact : Kabilan : 7871123619 )",
+    organizers: "Keerthanaa B and Nadheedha S ( Contact : 7871123619 )",
     description: "UI Design",
     rules: `
 Rules:
@@ -188,7 +187,7 @@ Evaluation Criteria:
     date: "16th September 2023",
     time: "11:30 am to 1:00 pm",
     location: "Drawing Room (G32)",
-    organizers: "Kaviena Sharon and Judith (Contact: Kabilan : 7871123619 ) ",
+    organizers: "Kaviena Sharon and Judith (Contact: 7871123619 ) ",
     description: "Tech Charades",
     rules: `
 Rules:
@@ -267,7 +266,7 @@ Event Guidelines:
     time: "1:30 pm to 3:00 pm",
     location: "Classroom (I32)",
     organizers:
-      "Nivedita Ramatoti and Chrispin Sheena ( Contact : Akash C : 7418921212 )",
+      "Nivedita Ramatoti and Chrispin Sheena ( Contact : 7418921212 )",
     description: "Technical Connection",
     rules: `
 Rules:
@@ -334,18 +333,20 @@ export default function EventPage() {
           </video>
         </div>
         {eventDeets && (
-          <div className="flex-col justify-center items-center absolute top-[80px]">
+          <div className="flex-col justify-center items-center absolute top-[90px]">
             <div className="glasscard m-4 p-3">
-              <div className="my-3 m-4 uppercase text-xl font-bold">
-                {eventDeets.name}{" "}
-                <button
-                  className="m-4 py-2 px-4 border border-gray-400 rounded shadow"
+              <div className="my-3 m-4 uppercase text-xl font-bold space-y-5">
+                <p className="text-4xl mb-4 sm:mb-3">{eventDeets.name} </p>
+                <div></div>
+                <a
+                  href="#regform"
+                  className="py-2 px-4 border border-gray-400 rounded shadow"
                   onClick={() => {
                     setReg(true);
                   }}
                 >
                   Register <span aria-hidden="true">&rarr;</span>
-                </button>
+                </a>
               </div>
               <pre className="lg:text-[17px] md:text-[15px] text-[13px] pl-5 font-inherit">
                 {eventDeets.rules}
@@ -364,24 +365,29 @@ export default function EventPage() {
 
               {reg && eventDeets?.registerationlink && (
                 <>
-                  <div className="w-full p-10 border rounded">
-                    <iframe
-                      // scrolling="no"
-                      src={`${eventDeets?.registerationlink}/viewform`}
-                      className="w-full overflow-y-clip h-full overflow-hidden"
-                      style={{ minHeight: "2000px" }}
+                  <section id="regform">
+                    <div
+                      className="w-full p-10 border sm:p-0 rounded"
+                      id="#regform"
                     >
-                      Loading…
-                    </iframe>
-                  </div>
-                  <button
-                    className="m-4 py-2 px-4 border border-gray-400 rounded shadow"
-                    onClick={() => {
-                      setReg(false);
-                    }}
-                  >
-                    Close <span aria-hidden="true">&rarr;</span>
-                  </button>
+                      <iframe
+                        // scrolling="no"
+                        src={`${eventDeets?.registerationlink}/viewform`}
+                        className="w-full overflow-y-clip h-full overflow-hidden "
+                        style={{ minHeight: "2000px" }}
+                      >
+                        Loading…
+                      </iframe>
+                    </div>
+                    <button
+                      className="m-4 py-2 px-4 border border-gray-400 rounded shadow"
+                      onClick={() => {
+                        setReg(false);
+                      }}
+                    >
+                      Close <span aria-hidden="true">&rarr;</span>
+                    </button>
+                  </section>
                 </>
               )}
             </div>
