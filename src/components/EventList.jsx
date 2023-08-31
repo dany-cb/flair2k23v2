@@ -6,11 +6,43 @@ const EventList = () => {
   const [events, setEvents] = useState(jsonData);
   console.log("the data is", events);
 
+  function Cursor() {
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+
+    function handleCursor(e) {
+      setPosition({
+        x: e.clientX,
+        y: e.clientY,
+      });
+    }
+
+    useEffect(() => {
+      document.addEventListener("mousemove", handleCursor);
+
+      return () => {
+        document.removeEventListener("mousemove", handleCursor);
+      };
+    }, []);
+
+    return (
+      <div
+        className="fixed top-0 left-0 z-50 select-none blur-sm bg-black/50 scale-75 rounded-full transition-all duration-300 cursor-pointer"
+        style={{
+          top: position.y,
+          left: position.x,
+        }}
+      >
+        <span className="block w-full text-center text-white">⚫</span>
+      </div>
+    );
+  }
+
   return (
     <>
       <p className="flex justify-center text-5xl tracking-[.5rem] m-3">
         Events
       </p>
+      <Cursor />
       <main className="flex justify-center eventsection" id="events">
         <div className="grid place-items-center gap-7 lg:grid-cols-3 sm:grid-cols-1">
           {events.map((i, index) => (

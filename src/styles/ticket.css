@@ -1,0 +1,7 @@
+.parallax-effect-glare-scale {
+  transform-style: preserve-3d;
+}
+
+.parallax-effect-glare-scale .inner-element {
+  transform: translateZ(60px);
+}
