@@ -23,7 +23,7 @@ const Start = () => {
       >
         <div className="flex flex-col items-start mb-3 mr-4 md:items-center md:flex-row md:mb-0">
           <a
-            href="https://flowbite.com/"
+            href="/"
             className="flex items-center mb-2 border-gray-200 md:pr-4 md:mr-4 md:border-r md:mb-0 dark:border-gray-600"
           >
             <img src="img/licet.png" className="h-6 mr-2" alt="Flowbite Logo" />
@@ -45,7 +45,7 @@ const Start = () => {
           <button
             data-dismiss-target="#marketing-banner"
             type="button"
-            className="flex-shrink-0 inline-flex justify-center w-7 h-7 items-center text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white"
+            className="flex-shrink-0 inline-flex justify-center w-7 h-7 items-center text-gray-400 hover:bg-gray-200 hover:text-gray-900 rounded-2xl text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white"
             onClick={() => {
               setModal(false);
               localStorage.setItem("modalshow", false);

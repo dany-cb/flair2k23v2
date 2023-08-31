@@ -15,35 +15,36 @@ export default async function handler(req, res) {
       ],
     });
     const doc = new GoogleSpreadsheet(
-      process.env.SPREADSHEET_ID,
+      process.env[req.body.eventName.toUpperCase().replace(/ /g, "_")],
       serviceAccountAuth
     );
 
     await doc.loadInfo(); // loads document properties and worksheets
-    await doc.updateProperties({ title: "Symposium" });
+    await doc.updateProperties({ title: `${req.body.eventName} - Responses` });
 
     const sheet = doc.sheetsByIndex[0]; // or use `doc.sheetsById[id]` or `doc.sheetsByTitle[title]`
+
     sheet.setHeaderRow([
+      "Team Name",
       "Name",
       "Email",
-      "Phone",
-      "College",
+      "Phone No",
+      "Institution",
       "Year",
-      "Branch",
-      "City",
-      "State",
+      "Department",
+      "Reg No",
       "Timestamp",
     ]);
 
     const result = await sheet.addRow({
+      "Team Name": req.body.teamName,
       Name: req.body.name,
       Email: req.body.email,
-      Phone: req.body.phone,
-      College: req.body.college,
+      "Phone No": req.body.phoneNo,
+      Institution: req.body.institution,
       Year: req.body.year,
-      Branch: req.body.branch,
-      City: req.body.city,
-      State: req.body.state,
+      Department: req.body.department,
+      "Reg No": req.body.regNo,
       Timestamp: new Date().toLocaleString(),
     });
 

@@ -1,14 +1,5 @@
-import { useState, forwardRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
 import {
   Select,
   SelectContent,
@@ -21,54 +12,101 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Textarea } from "@/components/ui/textarea";
+// import { Textarea } from "@/components/ui/textarea";
 import { request } from "@/lib/utils";
+import { useRouter } from "next/router";
 
 const register = () => {
+  const router = useRouter();
   const eventTeamCount = {
-    stellar_hunt: 3,
-    cosmic_chron: 3,
-    celes_can: 5,
-    oo: 3,
-    sp_complex: 5,
-    tesseract: 3,
-    pitch_black: 3,
-    constell: 3,
+    "Stellar Hunt": 1,
+    "Celestial Canvas": 1,
+    "Orbiting Oddities": 3,
+    "Space Complexity": 5,
+    Tesseract: 3,
+    "Pitch Black": 3,
+    Constellations: 3,
   };
-  const [eventName, setEventName] = useState("stellar_hunt");
+  const [eventName, setEventName] = useState("Stellar Hunt");
   const [form, setForm] = useState({
-    team_name: "",
+    eventName: "Stellar Hunt",
+    teamName: "",
+    members: [],
+    deptOther: false,
   });
 
   useEffect(() => {
     if (eventTeamCount[eventName] !== undefined) {
-      setForm((prev) => {
-        let newForm = { ...prev };
-        for (let i = 1; i <= eventTeamCount[eventName]; i++) {
-          newForm[`member${i}`] = {
-            email: "",
-            contact: "",
-            institution: "",
-            year: "",
-            dept: "",
-          };
-        }
-        return newForm;
-      });
+      let newForm = { ...form };
+      newForm.members = [];
+      newForm.eventName = eventName;
+      for (let i = 0; i < eventTeamCount[eventName]; i++) {
+        newForm.members.push({
+          name: "",
+          email: "",
+          phoneNo: "",
+          regNo: "",
+          institution: "",
+          year: "",
+          department: "",
+        });
+      }
+      setForm(newForm);
     }
   }, [eventName]);
 
+  const validateForm = () => {
+    if (form.teamName === "") {
+      return false;
+    }
+    let isValid = true;
+    form.members.forEach((member) => {
+      if (member.name === "") {
+        isValid = false;
+      }
+      if (member.regNo === "") {
+        isValid = false;
+      }
+      if (member.email === "") {
+        isValid = false;
+      }
+      if (member.phoneNo === "") {
+        isValid = false;
+      }
+      if (member.institution === "") {
+        isValid = false;
+      }
+      if (member.year === "") {
+        isValid = false;
+      }
+      if (member.department === "") {
+        isValid = false;
+      }
+    });
+    return isValid;
+  };
+
   async function handleSubmit() {
+    // if (!validateForm()) {
+    //   alert("Please fill all the fields");
+    //   return;
+    // }
+    console.log(form);
+
     const options = {
       method: "post",
       url: `/api/addParticipants`,
       data: {
-        form,
+        ...form,
       },
     };
     const { data, error } = await request(options);
     console.log({ data, error });
-    // return { data, error };
+    if (error) {
+      alert("Something went wrong");
+    } else {
+      router.push("/");
+    }
   }
 
   return (
@@ -85,177 +123,215 @@ const register = () => {
           <SelectContent>
             <SelectGroup>
               <SelectLabel>Events</SelectLabel>
-              <SelectItem value="stellar_hunt">Stellar Hunt</SelectItem>
-              <SelectItem value="cosmic_chron">Cosmic Chronicles</SelectItem>
-              <SelectItem value="celes_can">Celestial Canvas</SelectItem>
-              <SelectItem value="oo">Orbiting Oddities</SelectItem>
-              <SelectItem value="sp_complex">Space Complexity</SelectItem>
-              <SelectItem value="tesseract">Tesseract</SelectItem>
-              <SelectItem value="pitch_black">Pitch Black</SelectItem>
-              <SelectItem value="constell">Constellation</SelectItem>
+              <SelectItem value="Stellar Hunt">Stellar Hunt</SelectItem>
+              <SelectItem value="Celestial Canvas">Celestial Canvas</SelectItem>
+              <SelectItem value="Orbiting Oddities">
+                Orbiting Oddities
+              </SelectItem>
+              <SelectItem value="Space Complexity">Space Complexity</SelectItem>
+              <SelectItem value="Tesseract">Tesseract</SelectItem>
+              <SelectItem value="Pitch Black">Pitch Black</SelectItem>
+              <SelectItem value="Constellations">Constellations</SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>
         <div>
           <div class="form-group">
             <div className="grid w-full max-w-sm items-center gap-1.5">
-              <Label htmlFor="team_name">Team Name</Label>
+              <Label htmlFor="teamName">Team Name</Label>
               <Input
                 type="text"
-                id="team_name"
-                value={form.team_name}
+                id="teamName"
+                value={form.teamName}
                 placeholder="Team Name"
-                required
-                onChange={(e) =>
-                  setForm({ ...form, team_name: e.target.value })
-                }
+                onChange={(e) => setForm({ ...form, teamName: e.target.value })}
               />
             </div>
           </div>
-          {
-            // Team Members
-            Array.from(Array(eventTeamCount[eventName]).keys()).map((i) => (
-              <div key={i}>
-                <div className="flex items-center justify-center">
-                  <hr className="my-5 w-3/4" />
-                </div>
-                <div class="form-group">
-                  <div className="grid w-full max-w-sm items-center gap-1.5">
-                    <Label htmlFor={"mem_" + (i + 1)}>
-                      Member {i + 1} Email
-                    </Label>
-                    <Input
-                      type="text"
-                      id={"mem_" + (i + 1)}
-                      placeholder={"Member " + (i + 1) + " Email"}
-                      required
-                      value={form[`member${i + 1}`]?.email}
-                      onChange={(e) => {
-                        let newForm = { ...form };
-                        newForm[`member${i + 1}`].email = e.target.value;
-                        setForm(newForm);
-                      }}
-                    />
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div className="grid w-full max-w-sm items-center gap-1.5">
-                    <Label htmlFor={"contact_" + (i + 1)}>
-                      Member {i + 1} Contact
-                    </Label>
-                    <Input
-                      type="text"
-                      id={"contact_" + (i + 1)}
-                      value={form[`member${i + 1}`]?.contact}
-                      placeholder={"Member " + (i + 1) + " Contact"}
-                      required=""
-                      onChange={(e) => {
-                        let newForm = { ...form };
-                        newForm[`member${i + 1}`].contact = e.target.value;
-                        setForm(newForm);
-                      }}
-                    />
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div className="grid w-full max-w-sm items-center gap-1.5">
-                    <Label htmlFor={"insti_" + (i + 1)}>Institution Name</Label>
-                    <Input
-                      type="text"
-                      id={"insti_" + (i + 1)}
-                      value={form[`member${i + 1}`]?.institution}
-                      placeholder="Institution Name"
-                      required=""
-                      onChange={(e) => {
-                        let newForm = { ...form };
-                        newForm[`member${i + 1}`].institution = e.target.value;
-                        setForm(newForm);
-                      }}
-                    />
-                  </div>
-                </div>
-                <div class="form-group">
-                  <Label htmlFor="yof">Year of study</Label>
-                  <RadioGroup
-                    defaultValue=""
-                    value={form[`member${i + 1}`]?.year}
-                    onChange={(e) => {
-                      let newForm = { ...form };
-                      newForm[`member${i + 1}`].year = e.target.value;
-                      setForm(newForm);
-                    }}
-                  >
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="year1" id="y1" />
-                      <Label htmlFor="y1">1</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="year2" id="y2" />
-                      <Label htmlFor="y2">2</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="year3" id="y3" />
-                      <Label htmlFor="y3">3</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="year4" id="y4" />
-                      <Label htmlFor="y4">4</Label>
-                    </div>
-                  </RadioGroup>
-                </div>
-                <div class="form-group">
-                  <Label htmlFor="dept">Department</Label>
-                  <RadioGroup
-                    defaultValue=""
-                    value={form[`member${i + 1}`]?.dept}
-                    onChange={(e) => {
-                      let newForm = { ...form };
-                      newForm[`member${i + 1}`].dept = e.target.value;
-                      setForm(newForm);
-                    }}
-                  >
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="cse" id="cse" />
-                      <Label htmlFor="cse">CSE</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="ece" id="ece" />
-                      <Label htmlFor="ece">ECE</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="eee" id="eee" />
-                      <Label htmlFor="eee">EEE</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="IT" id="it" />
-                      <Label htmlFor="it">IT</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="mech" id="mech" />
-                      <Label htmlFor="mech">MECH</Label>
-                    </div>
-                  </RadioGroup>
+          {Array.from(Array(eventTeamCount[eventName]).keys()).map((i) => (
+            <div key={i}>
+              <div className="flex items-center justify-center">
+                <hr className="my-5 w-3/4" />
+              </div>
+              <div class="form-group">
+                <div className="grid w-full max-w-sm items-center gap-1.5">
+                  <Label htmlFor={"mem_" + (i + 1)}>Member {i + 1} Name</Label>
                   <Input
                     type="text"
-                    placeholder="Others"
-                    name="other_dept"
-                    id="other_dept"
-                    className="grid w-full max-w-sm items-center gap-1.5"
+                    id={"mem_" + (i + 1)}
+                    placeholder={"Member " + (i + 1) + " Name"}
+                    value={form.members[i]?.name}
                     onChange={(e) => {
                       let newForm = { ...form };
-                      newForm[`member${i + 1}`].dept = e.target.value;
+                      newForm.members[i].name = e.target.value;
                       setForm(newForm);
                     }}
-                  ></Input>
+                  />
                 </div>
               </div>
-            ))
-          }
+              <div class="form-group">
+                <div className="grid w-full max-w-sm items-center gap-1.5">
+                  <Label htmlFor={"mem_" + (i + 1)}>Member {i + 1} Email</Label>
+                  <Input
+                    type="text"
+                    id={"mem_" + (i + 1)}
+                    placeholder={"Member " + (i + 1) + " Email"}
+                    value={form.members[i]?.email}
+                    onChange={(e) => {
+                      let newForm = { ...form };
+                      newForm.members[i].email = e.target.value;
+                      setForm(newForm);
+                    }}
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <div className="grid w-full max-w-sm items-center gap-1.5">
+                  <Label htmlFor={"mem_" + (i + 1)}>
+                    Member {i + 1} Register No.
+                  </Label>
+                  <Input
+                    type="text"
+                    id={"mem_" + (i + 1)}
+                    placeholder={"Member " + (i + 1) + " Register No."}
+                    value={form.members[i]?.regNo}
+                    onChange={(e) => {
+                      let newForm = { ...form };
+                      newForm.members[i].regNo = e.target.value;
+                      setForm(newForm);
+                    }}
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <div className="grid w-full max-w-sm items-center gap-1.5">
+                  <Label htmlFor={"phoneNo_" + (i + 1)}>
+                    Member {i + 1} phoneNo
+                  </Label>
+                  <Input
+                    type="text"
+                    id={"phoneNo_" + (i + 1)}
+                    placeholder={"Member " + (i + 1) + " phoneNo"}
+                    value={form.members[i]?.phoneNo}
+                    onChange={(e) => {
+                      let newForm = { ...form };
+                      newForm.members[i].phoneNo = e.target.value;
+                      setForm(newForm);
+                    }}
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <div className="grid w-full max-w-sm items-center gap-1.5">
+                  <Label htmlFor={"insti_" + (i + 1)}>
+                    Member {i + 1} Institution Name
+                  </Label>
+                  <Input
+                    type="text"
+                    id={"insti_" + (i + 1)}
+                    value={form.members[i]?.institution}
+                    placeholder={"Member " + (i + 1) + " Institution"}
+                    onChange={(e) => {
+                      let newForm = { ...form };
+                      newForm.members[i].institution = e.target.value;
+                      setForm(newForm);
+                    }}
+                  />
+                </div>
+              </div>
+              <div class="">
+                <Label htmlFor="yof">Year of study</Label>
+                <RadioGroup
+                  defaultValue=""
+                  value={form.members[i]?.year.toString()}
+                  onValueChange={(val) => {
+                    let newForm = { ...form };
+                    newForm.members[i].year = parseInt(val);
+                    setForm(newForm);
+                  }}
+                  className="flex flex-wrap gap-2"
+                >
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="1" id="y1" />
+                    <Label htmlFor="y1">1</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="2" id="y2" />
+                    <Label htmlFor="y2">2</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="3" id="y3" />
+                    <Label htmlFor="y3">3</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="4" id="y4" />
+                    <Label htmlFor="y4">4</Label>
+                  </div>
+                </RadioGroup>
+              </div>
+              <div class="form-group">
+                <Label htmlFor="dept">Department</Label>
+                <Select
+                  onValueChange={(val) => {
+                    let newForm = { ...form };
+                    newForm.members[i].department = val;
+                    if (val === "other") {
+                      newForm.deptOther = true;
+                    } else {
+                      newForm.deptOther = false;
+                    }
+                    setForm(newForm);
+                  }}
+                  defaultValue={form.members[i]?.department}
+                >
+                  <SelectTrigger className="w-[180px]">
+                    <SelectValue placeholder="Select a department" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectGroup>
+                      <SelectLabel>Departments</SelectLabel>
+                      <SelectItem value="cse">CSE</SelectItem>
+                      <SelectItem value="ece">ECE</SelectItem>
+                      <SelectItem value="eee">EEE</SelectItem>
+                      <SelectItem value="mech">MECH</SelectItem>
+                      <SelectItem value="civil">CIVIL</SelectItem>
+                      <SelectItem value="chem">CHEM</SelectItem>
+                      <SelectItem value="meta">META</SelectItem>
+                      <SelectItem value="prod">PROD</SelectItem>
+                      <SelectItem value="biotech">BIOTECH</SelectItem>
+                      <SelectItem value="ice">ICE</SelectItem>
+                      <SelectItem value="archi">ARCHI</SelectItem>
+                      <SelectItem value="mca">MCA</SelectItem>
+                      <SelectItem value="msc">MSC</SelectItem>
+                      <SelectItem value="phd">PHD</SelectItem>
+                      <SelectItem value="other">OTHER</SelectItem>
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+                {form.deptOther && (
+                  <div className="grid w-full max-w-sm items-center gap-1.5">
+                    <Label htmlFor="other_dept">Other Department</Label>
+                    <Input
+                      type="text"
+                      id="other_dept"
+                      placeholder="Other Department"
+                      value={form.members[i]?.dept}
+                      onChange={(e) => {
+                        let newForm = { ...form };
+                        newForm.members[i].dept = e.target.value;
+                        setForm(newForm);
+                      }}
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
 
-          <div className="grid w-full max-w-sm items-center gap-1.5">
+          {/* <div className="grid w-full max-w-sm items-center gap-1.5">
             <Label htmlFor="textarea">How Can We Help You?</Label>
-            <Textarea name="textarea" id="textarea" required="" rows="5" />
-          </div>
+            <Textarea name="textarea" id="textarea" ="" rows="5" />
+          </div> */}
           <Button variant="outline" onClick={handleSubmit}>
             Submit
           </Button>

@@ -6,6 +6,7 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  plugins: [require("tailwindcss-animate")],
   theme: {
     extend: {
       backgroundImage: {
@@ -16,7 +17,6 @@ module.exports = {
     },
     fontFamily: {
       inherit: "inherit",
-    },
     },
     extend: {
       colors: {
@@ -75,5 +75,4 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
 };

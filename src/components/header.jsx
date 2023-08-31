@@ -33,18 +33,18 @@ const Header = () => {
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
-            <Link href="/" className="text-md font-semibold leading-6">
+            <Link href="/" className="text-lg font-semibold leading-6">
               Home
             </Link>
-            <Link href="/#events" className="text-md font-semibold leading-6">
+            <Link href="/#events" className="text-lg font-semibold leading-6 ">
               Events
             </Link>
-            <Link href="/#contact" className="text-md font-semibold leading-6">
+            <Link href="/#contact" className="text-lg font-semibold leading-6 ">
               Contact us
             </Link>
             <Link
               href="https://licet.ac.in/information-technology/"
-              className="text-md font-semibold leading-6"
+              className="text-lg font-semibold leading-6 "
             >
               About us
             </Link>
@@ -102,7 +102,7 @@ const Header = () => {
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Contact us
+                      Contact
                     </Link>
                     <Link
                       href="https://licet.ac.in/information-technology/"

@@ -281,7 +281,7 @@ Event Guidelines:
   Round 1:
     1. Participants will match a given clue with a sequence of images.
     2. This round is divided into three sections: Easy (30 seconds), Medium (45 seconds), and Hard (60 seconds).
-    3. Each team will receive three questions, one from each difficulty level, on a rotating basis.
+    3. Each team will receive three questions, one from each difficulty level.
     4. Correct answers in this round will earn the team 1 point each.
     5. Participants with sufficient points in Round 1 will proceed to Round 2.
     
@@ -318,6 +318,7 @@ export default function EventPage() {
       )
     );
   }, [ename]);
+  console.log("the route is ", ename?.replace(/-/g, " "));
   return (
     <>
       <main className={`bg-fixed flex justify-center ${inter.className}`}>
@@ -339,7 +340,9 @@ export default function EventPage() {
                 <p className="text-4xl mb-4 sm:mb-3">{eventDeets.name} </p>
                 <div></div>
                 <a
-                  href="#regform"
+                  href={`${
+                    ename === "cosmic-chronicles" ? "#regform" : "/register"
+                  }`}
                   className="py-2 px-4 border border-gray-400 rounded shadow"
                   onClick={() => {
                     setReg(true);

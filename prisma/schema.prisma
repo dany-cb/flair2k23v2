@@ -13,21 +13,23 @@ datasource db {
 model Participant {
   id          String   @id @default(cuid()) @map("_id")
   name        String
-  email       String   @unique
+  email       String
   phoneNo     String
   institution String
+  year        Int
   department  String
   regNo       String
   createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  eventId     String?
+  eventName   String?
+  teamId      String?
 
-  Event Event? @relation(fields: [eventId], references: [id])
+  Event Event? @relation(fields: [eventName], references: [name])
+  Team  Team?  @relation(fields: [teamId], references: [id])
 }
 
 model Event {
   id           String        @id @default(cuid()) @map("_id")
-  name         String
+  name         String        @unique
   catchPhrase  String
   duration     Int
   description  String
@@ -48,4 +50,10 @@ model Organizer {
   updatedAt DateTime @updatedAt
   Event     Event?   @relation(fields: [eventId], references: [id])
   eventId   String?
+}
+
+model Team {
+  id           String        @id @default(cuid()) @map("_id")
+  name         String
+  Participants Participant[]
 }
