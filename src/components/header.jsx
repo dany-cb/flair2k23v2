@@ -9,13 +9,17 @@ const Header = () => {
     <>
       <header className="header">
         <nav
-          className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 backdrop-filter backdrop-blur-sm "
+          className="mx-auto flex max-w-8xl items-center justify-between p-2.5 lg:px-8 backdrop-filter backdrop-blur-sm "
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">FLAIR2K23</span>
-              <img className="h-8 w-auto" src="/img/Logo v1.png" alt="" />
+              <img
+                className="md:h-14 h-14  w-auto"
+                src="/img/licet2.png"
+                alt=""
+              />
             </Link>
           </div>
           <div className="flex lg:hidden">
@@ -29,21 +33,27 @@ const Header = () => {
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
+            <Link href="/" className="text-md font-semibold leading-6">
+              Home
+            </Link>
             <Link href="/#events" className="text-md font-semibold leading-6">
               Events
             </Link>
             <Link href="/#contact" className="text-md font-semibold leading-6">
               Contact us
             </Link>
-            <Link href="https://licet.ac.in/information-technology/" className="text-md font-semibold leading-6">
+            <Link
+              href="https://licet.ac.in/information-technology/"
+              className="text-md font-semibold leading-6"
+            >
               About us
             </Link>
           </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a href="#" className="text-sm font-semibold leading-6">
               Promo <span aria-hidden="true">&rarr;</span>
             </a>
-          </div>
+          </div> */}
         </nav>
         {mobileMenuOpen && (
           <div className="lg:hidden">
@@ -73,6 +83,13 @@ const Header = () => {
               <div className="mt-6 flow-root">
                 <div className="-my-6 divide-y divide-gray-500/10">
                   <div className="space-y-2 py-6">
+                    <Link
+                      href="/"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Home
+                    </Link>
                     <Link
                       href="/#events"
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"

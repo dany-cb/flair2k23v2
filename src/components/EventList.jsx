@@ -68,7 +68,10 @@ const EventList = () => {
                 <Link
                   href={`/events/${i.name.toLowerCase().replace(/ /g, "-")}`}
                 >
-                  <button className="py-2 px-4 border border-gray-400 rounded shadow">
+                  <button
+                    className="py-2 px-4 border border-gray-400 shadow-lg rounded max-w-md mx-auto rounded-xl overflow-hidden md:max-w-2xl my-5 transform translate-y-4 
+                    hover:bg-indigo-950 shadow-cyan-500/100 hover:translate-y-0 duration-500 ease-in-out"
+                  >
                     Details <span aria-hidden="true">&rarr;</span>
                   </button>
                 </Link>
