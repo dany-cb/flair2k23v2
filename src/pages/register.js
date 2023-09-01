@@ -28,6 +28,7 @@ const register = () => {
     "Pitch Black": 3,
     Constellations: 3,
   };
+  const [errors, setErrors] = useState({});
   const [eventName, setEventName] = useState("Stellar Hunt");
   const [form, setForm] = useState({
     eventName: "Stellar Hunt",
@@ -57,34 +58,45 @@ const register = () => {
   }, [eventName]);
 
   const validateForm = () => {
+    const newErrors = {};
     if (form.teamName === "") {
-      return false;
+      newErrors.teamName = "Team Name is required";
     }
-    let isValid = true;
-    form.members.forEach((member) => {
+    form.members.forEach((member, index) => {
       if (member.name === "") {
-        isValid = false;
+        newErrors[`name_${index}`] = `Member ${index + 1} Name is required`;
       }
       if (member.regNo === "") {
-        isValid = false;
+        newErrors[`regNo_${index}`] = `Member ${
+          index + 1
+        } Register No. is required`;
       }
       if (member.email === "") {
-        isValid = false;
+        newErrors[`email_${index}`] = `Member ${index + 1} Email is required`;
       }
       if (member.phoneNo === "") {
-        isValid = false;
+        newErrors[`phoneNo_${index}`] = `Member ${
+          index + 1
+        } Phone No. is required`;
       }
       if (member.institution === "") {
-        isValid = false;
+        newErrors[`institution_${index}`] = `Member ${
+          index + 1
+        } Institution is required`;
       }
       if (member.year === "") {
-        isValid = false;
+        newErrors[`year_${index}`] = `Member ${
+          index + 1
+        } Year of Study is required`;
       }
       if (member.department === "") {
-        isValid = false;
+        newErrors[`department_${index}`] = `Member ${
+          index + 1
+        } Department is required`;
       }
     });
-    return isValid;
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   async function handleSubmit() {
@@ -156,6 +168,12 @@ const register = () => {
                     setForm({ ...form, teamName: e.target.value })
                   }
                 />
+                {errors[`name_${index}`] && (
+                  <p className="mt-2 text-sm text-red-600 dark:text-red-500">
+                    <span className="font-medium">Oops!</span>{" "}
+                    {errors[`name_${index}`]}
+                  </p>
+                )}
               </div>
             </div>
             {Array.from(Array(eventTeamCount[eventName]).keys()).map((i) => (
