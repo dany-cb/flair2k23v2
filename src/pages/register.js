@@ -115,7 +115,7 @@ const register = () => {
       <Header />
       <section className="flex justify-center items-center mt-[60px]">
         <div className="glasscard block m-5 rounded-lg w-fit lg:w-1/3 md:w-3/4 h-1/2 bg-slate-800 p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-          <h5 className="mb-2 text-xl font-medium leading-tight ">Register</h5>
+          <h5 className="mb-2 text-3xl font-medium leading-tight">Register</h5>
           <Select
             onValueChange={(val) => setEventName(val)}
             defaultValue={eventName}
@@ -161,7 +161,7 @@ const register = () => {
             {Array.from(Array(eventTeamCount[eventName]).keys()).map((i) => (
               <div key={i} className="space-y-5">
                 <div className="flex items-center justify-center">
-                  <hr className="my-5 w-[75%] bg-gray-300" />
+                  <hr className="w-52 h-1 mx-auto my-4 bg-gray-500 border-0 rounded md:my-10" />
                 </div>
                 <div className="form-group">
                   <div className="grid w-full max-w-sm items-center gap-1.5">
@@ -271,22 +271,34 @@ const register = () => {
                     className="flex flex-wrap gap-2 "
                   >
                     <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="1" id="y1" />
+                      <RadioGroupItem
+                        value="1"
+                        id="y1"
+                        className="border-slate-500 text-slate-300"
+                      />
                       <Label htmlFor="y1">1</Label>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="2" id="y2" />
+                      <RadioGroupItem
+                        value="2"
+                        id="y2"
+                        className="border-slate-500 text-slate-300"
+                      />
                       <Label htmlFor="y2">2</Label>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="3" id="y3" />
+                      <RadioGroupItem
+                        value="3"
+                        id="y3"
+                        className="border-slate-500 text-slate-300"
+                      />
                       <Label htmlFor="y3">3</Label>
                     </div>
                     <div className="flex items-center space-x-2">
                       <RadioGroupItem
                         value="4"
                         id="y4"
-                        className="border-slate-300 text-slate-300"
+                        className="border-slate-500 text-slate-300"
                       />
                       <Label htmlFor="y4">4</Label>
                     </div>
