@@ -29,7 +29,7 @@ function FlippingCard() {
           </h1>
         </div>
         <div className="absolute top-6 left-10 right-0 p-4 text-space inner-element">
-          <h1 className="text-5xl font-dune-rise font-regular">Kabilan G</h1>
+          <h1 className="text-5xl font-dela font-regular">Kabilan G</h1>
           <p className="text-xs mt-4 w-2/3 font-montserrat">
             Loyola ICAM College of Engineering and Technology, Chennai, Tamil
             Nadu
