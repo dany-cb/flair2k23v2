@@ -1,3 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
+
+.font-dela {
+  font-family: "Dela Gothic One", cursive;
+  /* text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de,
+    0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de; */
+}
+
+.font-reospec {
+  font-family: "Reospec", cursive;
+  --bg-size: 400%;
+  --color-one: #fac37b;
+  --color-two: #91261d;
+  background: linear-gradient(
+      90deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-one)
+    )
+    0 0 / var(--bg-size) 100%;
+  color: transparent;
+  background-clip: text;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .font-reospec {
+    animation: move-bg 8s linear infinite;
+  }
+  @keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
+}
+
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+.font-dune-rise {
+  font-family: "Dune Rise", cursive;
+}
+
+@font-face {
+  font-family: "Dune Rise";
+  src: url("https://cdn.jsdelivr.net/gh/Reospec/Reospec-Font/DuneRise.ttf");
+}
+
+@font-face {
+  font-family: "Reospec";
+  src: url("https://cdn.jsdelivr.net/gh/Reospec/Reospec-Font/Reospec-Regular.otf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("https://cdn.jsdelivr.net/gh/Reospec/Reospec-Font/Montserrat-Regular.ttf");
+}
+
 .parallax-effect-glare-scale {
   transform-style: preserve-3d;
 }

@@ -341,7 +341,9 @@ export default function EventPage() {
                 <div></div>
                 <a
                   href={`${
-                    ename === "cosmic-chronicles" ? "#regform" : "/register"
+                    ename === "cosmic-chronicles"
+                      ? "#regform"
+                      : `/register?event=${ename}`
                   }`}
                   className="py-2 px-4 border border-gray-400 rounded shadow"
                   onClick={() => {

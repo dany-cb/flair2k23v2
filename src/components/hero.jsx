@@ -8,14 +8,16 @@ const Hero = () => {
       <main id="home z-40">
         <Start />
         <div className={styles["hero-container"]}>
-          <video
-            autoPlay
-            loop
-            muted
-            className={styles["hero-background-video"]}
-          >
-            <source src="/space-theme.webm" type="video/webm" />
-          </video>
+          <div>
+            <video
+              autoPlay
+              loop
+              muted
+              className={styles["hero-background-video"]}
+            >
+              <source src="/space-theme.webm" type="video/webm" />
+            </video>
+          </div>
           <section className="flex items-center justify-center flex-col mt-[10rem]">
             <div className="text-2xl lg:text-2xl md:text-2xl sm:text-xg  text-center space-y-4 -mt-3">
               <p className="lg:hidden md:hidden font-bold tracking-[.1rem]">

@@ -8,6 +8,7 @@ export default async function handler(req, res) {
   }
   try {
     const formDetails = req.body;
+    console.log("here 1");
 
     const team = await prisma.team.create({
       data: {

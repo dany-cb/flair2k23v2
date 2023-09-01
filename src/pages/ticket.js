@@ -6,7 +6,7 @@ function FlippingCard() {
     <div className="flex justify-center items-center w-screen h-screen">
       <Tilt
         glareEnable={true}
-        glareMaxOpacity={0.2}
+        glareMaxOpacity={0.1}
         glareColor="lightblue"
         glarePosition="all"
         scale={1.2}
@@ -17,21 +17,23 @@ function FlippingCard() {
         className="relative cursor-none parallax-effect-glare-scale"
       >
         <Image
-          className="rounded-xl"
+          className="rounded-xl shadow-xl"
           src="/img/Pass.png"
           alt="Picture of the author"
           width={600}
           height={600}
         />
-        <div className="absolute top-20 left-10 right-0 p-4 text-space inner-element">
-          <h1 className="text-5xl font-semibold">Crispin R</h1>
-          <p className="text-xs mt-4 w-1/2">
-            Loyola ICAM College of Engineering and Technology
-          </p>
+        <div className="absolute bottom-6 left-1/3 -translate-x-1/2 inner-element">
+          <h1 className="text-xs font-reospec tracking-widest">
+            cllz9bpyi0005tb90x6ustr5z
+          </h1>
         </div>
-
-        <div className="absolute top-5 left-10 right-0 p-4 inner-element">
-          <h1 className="text-xl font-semibold">01</h1>
+        <div className="absolute top-6 left-10 right-0 p-4 text-space inner-element">
+          <h1 className="text-5xl font-dune-rise font-regular">Kabilan G</h1>
+          <p className="text-xs mt-4 w-2/3 font-montserrat">
+            Loyola ICAM College of Engineering and Technology, Chennai, Tamil
+            Nadu
+          </p>
         </div>
       </Tilt>
     </div>
