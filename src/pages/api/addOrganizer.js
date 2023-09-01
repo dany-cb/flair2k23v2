@@ -1,9 +1,6 @@
 import prisma from "@/lib/prisma";
 
 export default async function (req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method not allowed" });
-  }
   try {
     const { name, email, phoneNo, eventId } = req.body;
 

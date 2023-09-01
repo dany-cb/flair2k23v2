@@ -2,9 +2,6 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 import { JWT } from "google-auth-library";
 
 export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method not allowed" });
-  }
   try {
     const serviceAccountAuth = new JWT({
       email: process.env.SERVICE_ACC,
