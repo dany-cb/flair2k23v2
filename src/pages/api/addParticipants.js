@@ -2,7 +2,7 @@ import prisma from "@/lib/prisma";
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { JWT } from "google-auth-library";
 
-export default async function handler(req, res) {
+export default async function PUT(req, res) {
   try {
     const formDetails = req.body;
 
