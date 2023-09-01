@@ -168,12 +168,6 @@ const register = () => {
                     setForm({ ...form, teamName: e.target.value })
                   }
                 />
-                {errors[`name_${index}`] && (
-                  <p className="mt-2 text-sm text-red-600 dark:text-red-500">
-                    <span className="font-medium">Oops!</span>{" "}
-                    {errors[`name_${index}`]}
-                  </p>
-                )}
               </div>
             </div>
             {Array.from(Array(eventTeamCount[eventName]).keys()).map((i) => (
