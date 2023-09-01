@@ -24,7 +24,8 @@ const Hero = () => {
                 Your <span>Space odyssey</span> starts here.
               </p>
             </div>
-            <div className="bg-gradient-to-r from-stone-300 via-purple-500 to-stone-300 bg-clip-text text-transparent lg:mt-[4rem] md:mt-[2rem] lg:p-20 md:p-10 flex flex-col justify-center items-center invisible lg:visible md:visible">
+            {/* <div className="bg-gradient-to-r from-green-700 via-lime-900 to-lime-500 bg-clip-text text-transparent lg:mt-[4rem] md:mt-[2rem] lg:p-20 md:p-10 flex flex-col justify-center items-center invisible lg:visible md:visible"> */}
+            <div className=" lg:mt-[4rem] md:mt-[2rem] lg:p-20 md:p-10 flex flex-col justify-center items-center invisible lg:visible md:visible">
               <svg
                 id="Layer_1"
                 data-name="Layer 1"
@@ -33,18 +34,7 @@ const Hero = () => {
                 className="fill-slate-200"
                 fill="currentColor"
               >
-                <defs>
-                  {/* <linearGradient
-                    id="gradient"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="0%"
-                  >
-                    <stop offset="0%" stopColor="#FF5733" />
-                    <stop offset="100%" stopColor="#878B27" />
-                  </linearGradient> */}
-                </defs>
+                <defs></defs>
                 <path
                   className="cls-1"
                   d="M6641.31,7043.71h205.92v48.71H6699.35v57.75h139.72v44H6699.35v94.51h-58Z"
@@ -94,7 +84,7 @@ const Hero = () => {
                 />
               </svg>
 
-              <p className="text-center text-md font-bold tracking-[.5rem] mt-3">
+              <p className="glasscard text-center text-4xl font-bold tracking-[.5rem] mt-5">
                 2K23
               </p>
 
