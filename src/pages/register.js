@@ -286,7 +286,7 @@ const register = () => {
                       <RadioGroupItem
                         value="4"
                         id="y4"
-                        className="border-slate-300 text-"
+                        className="border-slate-300 text-slate-300"
                       />
                       <Label htmlFor="y4">4</Label>
                     </div>
