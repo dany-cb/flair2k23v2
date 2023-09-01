@@ -14,7 +14,7 @@ const jsonData = [
     organizers: "Ashik S and Rithika R  ( Contact No : 9445387601 )",
     description: "Paper Presentation",
     registerationlink:
-      "https://docs.google.com/forms/d/e/1FAIpQLSfrG7uSLaSLP3EHutd59-OCYY4SsMLoj0X-O1Eiwgp0ppo6Ew",
+      "https://docs.google.com/forms/d/e/1FAIpQLSfrG7uSLaSLP3EHutd59-OCYY4SsMLoj0X-O1Eiwgp0ppo6Ew/viewform?usp=sf_link",
     description2:
       "A competition to enhance your ability in the art of academic writing or making papers on your project or research works and present it in front of the jury.",
     rules: `
@@ -60,6 +60,7 @@ Notes :
     location: "RDBMS (A21)",
     organizers: "Regis R and Arul Danica ( Contact : 9150206627 ) ",
     description: "Hunt your celestial treasure!",
+    registerationlink: "https://forms.gle/wK8oCDiM9yWcx54g7",
     rules: `
 Rules:
   1. All personal electronic devices (smartphones, smartwatches, laptops) are strictly prohibited during the mission.
@@ -91,6 +92,7 @@ Event Guidelines:
     location: "RDBMS (A21) ",
     organizers: "Keerthanaa B and Nadheedha S ( Contact : 7871123619 )",
     description: "UI Design",
+    registerationlink: "https://forms.gle/77tq9qaguXsTdxdL9",
     rules: `
 Rules:
   1. Participants must use Figma for design.
@@ -122,6 +124,7 @@ Event Guidelines:
     location: "CIS (J14)",
     organizers: "Sowmya B and Ludo Kirsten Roy V (Contact : 8925050777 )",
     description: "Meme Creation",
+    registerationlink: "https://forms.gle/G8y2HCNmRG2nwBnVA",
     rules: `
 Rules:
   1. Canva is the only application that should be used for meme creation.
@@ -149,6 +152,7 @@ Event Guidelines:
     location: "Data Structures Laboratory (A22)  ",
     organizers: "Afrid Ariff H and Avanthika Y ( Contact : 9360959577 )",
     description: "Code Debugging",
+    registerationlink: "https://forms.gle/FzfNkyV9RGjwQfpVA",
     rules: `
 Rules:
   1. Register for the event as an individual participant .
@@ -189,6 +193,7 @@ Evaluation Criteria:
     location: "Drawing Room (G32)",
     organizers: "Kaviena Sharon and Judith (Contact: 7871123619 ) ",
     description: "Tech Charades",
+    registerationlink: "https://forms.gle/1Vd5xyGgmasT1mtR6",
     rules: `
 Rules:
   1. The given word should be Enacted by one individual. 
@@ -231,6 +236,7 @@ Evaluation Criteria:
     time: "11:30 am to 1:00 pm",
     location: "Classroom (I31) ",
     description: " Business pitch ",
+    registerationlink: "https://forms.gle/Sju3YvYxMLeBtibM8",
     organizers: "Ananth and Ajay Roshan ( Contact : 7200126971 )",
     rules: `
 Rules:
@@ -268,6 +274,7 @@ Event Guidelines:
     organizers:
       "Nivedita Ramatoti and Chrispin Sheena ( Contact : 7418921212 )",
     description: "Technical Connection",
+    registerationlink: "https://forms.gle/vk2hqQnGqD8qtxdG8",
     rules: `
 Rules:
   1. Each team can have a maximum of 3 members.
@@ -340,11 +347,8 @@ export default function EventPage() {
                 <p className="text-4xl mb-4 sm:mb-3">{eventDeets.name} </p>
                 <div></div>
                 <a
-                  href={`${
-                    ename === "cosmic-chronicles"
-                      ? "#regform"
-                      : `/register?event=${ename}`
-                  }`}
+                  target="_blank"
+                  href={`${eventDeets.registerationlink}`}
                   className="py-2 px-4 border border-gray-400 rounded shadow"
                   onClick={() => {
                     setReg(true);
