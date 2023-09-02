@@ -4,7 +4,6 @@ import Link from "next/link";
 
 const EventList = () => {
   const [events, setEvents] = useState(jsonData);
-  console.log("the data is", events);
 
   return (
     <>

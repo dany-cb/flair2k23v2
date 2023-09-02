@@ -315,7 +315,6 @@ export default function EventPage() {
   const [reg, setReg] = useState(false);
   const router = useRouter();
   const ename = router.query.slug;
-  console.log("route is ", router.query.slug);
   useEffect(() => {
     setEventDeets(
       events.find(
@@ -325,7 +324,7 @@ export default function EventPage() {
       )
     );
   }, [ename]);
-  console.log("the route is ", ename?.replace(/-/g, " "));
+
   return (
     <>
       <main className={`bg-fixed flex justify-center ${inter.className}`}>

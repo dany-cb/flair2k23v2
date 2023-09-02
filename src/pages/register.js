@@ -104,7 +104,6 @@ const register = () => {
       alert("Please fill all the fields");
       return;
     }
-    console.log(form);
 
     const options = {
       method: "post",
@@ -114,7 +113,6 @@ const register = () => {
       },
     };
     const { data, error } = await request(options);
-    console.log({ data, error });
     if (error) {
       alert("Something went wrong");
     } else {
