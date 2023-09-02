@@ -8,28 +8,30 @@
 
 .font-reospec {
   font-family: "Reospec", cursive;
-  --bg-size: 400%;
-  --color-one: #fac37b;
-  --color-two: #91261d;
-  background: linear-gradient(
-      90deg,
-      var(--color-one),
-      var(--color-two),
-      var(--color-one)
-    )
-    0 0 / var(--bg-size) 100%;
-  color: transparent;
-  background-clip: text;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .font-reospec {
-    animation: move-bg 8s linear infinite;
-  }
-  @keyframes move-bg {
-    to {
-      background-position: var(--bg-size) 0;
-    }
+.text-gradient {
+  outline: none;
+  background: linear-gradient(
+    135deg,
+    #c78d34 0,
+    #cb9b51 22%,
+    #f6e27a 45%,
+    #f6f2c0 50%,
+    #f6e27a 55%,
+    #cb9b51 78%,
+    #c78d34 100%
+  );
+  background-size: 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+  to {
+    background-position: 400%;
   }
 }
 
@@ -62,4 +64,32 @@
 
 .parallax-effect-glare-scale .inner-element {
   transform: translateZ(60px);
+}
+
+.blob {
+  filter: blur(40px);
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  opacity: 0;
+  left: 0;
+  width: 250px;
+  height: 250px;
+  background: rgb(255, 255, 255, 0.5);
+  transition: all 0ms ease-in-out;
+}
+
+.fakeblob {
+  display: hidden;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+}
+
+.glare {
+  background: rgb(128 128 128 / 0.2);
+  transition: all 10ms ease-in-out;
 }

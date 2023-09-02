@@ -25,7 +25,7 @@ const Hero = () => {
               </p>
             </div>
             {/* <div className="bg-gradient-to-r from-green-700 via-lime-900 to-lime-500 bg-clip-text text-transparent lg:mt-[4rem] md:mt-[2rem] lg:p-20 md:p-10 flex flex-col justify-center items-center invisible lg:visible md:visible"> */}
-            <div className=" lg:mt-[4rem] md:mt-[2rem] lg:p-20 md:p-10 flex flex-col justify-center items-center invisible lg:visible md:visible">
+            <div className="lg:mt-[4rem] md:mt-[2rem] lg:p-20 md:p-10 flex flex-col justify-center items-center invisible lg:visible md:visible">
               <svg
                 id="Layer_1"
                 data-name="Layer 1"

@@ -16,7 +16,7 @@ const Start = () => {
     <>
       <div
         id="marketing-banner"
-        tabindex="-1"
+        tabIndex="-1"
         className={`fixed z-50 flex flex-col md:flex-row justify-between w-[calc(100%-2rem)] p-4 -translate-x-1/2 glasscard border border-gray-100 rounded-lg shadow-sm lg:max-w-7xl left-1/2 bottom-6 dark:border-gray-600 ${
           modal ? "block" : "hidden"
         }`}
