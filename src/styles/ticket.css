@@ -93,3 +93,50 @@
   background: rgb(128 128 128 / 0.2);
   transition: all 10ms ease-in-out;
 }
+
+/* CSS for the flip card */
+
+.flip-card-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.back {
+  /* Back side styles */
+  transform: rotateY(180deg);
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style for the content on the back side */
+.back-content {
+  text-align: center;
+}
+
+/* Style for the spin button */
+.spin-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.spin-button:hover {
+  background-color: #0056b3;
+}

@@ -314,7 +314,7 @@ const register = () => {
                     </div>
                   </RadioGroup>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <Label htmlFor="dept">Department</Label>
                   <Select
                     onValueChange={(val) => {

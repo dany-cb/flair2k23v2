@@ -1,10 +1,37 @@
 import Image from "next/image";
 import Tilt from "react-parallax-tilt";
-import { useEffect, useCallback, useRef } from "react";
+import { useEffect, useCallback, useRef, useState } from "react";
 import ReactCanvasConfetti from "react-canvas-confetti";
+import { useRouter } from "next/router";
+import { request } from "@/lib/utils";
 
-function FlippingCard() {
+export default function Ticket() {
+  const [ticketDetails, setTicketDetails] = useState(null);
+  const router = useRouter();
+  const { id } = router.query;
+
   useEffect(() => {
+    const verifyTicket = async () => {
+      try {
+        const options = {
+          method: "post",
+          url: `/api/verifyTicket`,
+          data: {
+            ticketId: id,
+          },
+        };
+        const result = await request(options);
+        if (!result) {
+          return router.push("/404");
+        }
+        setTicketDetails(result.data);
+        console.log(id);
+      } catch (error) {
+        console.log(error);
+        router.push("/404");
+      }
+    };
+    verifyTicket();
     const handleMouseMove = (ev) => {
       document.querySelectorAll(".glare").forEach((card) => {
         const blob = card.querySelector(".blob");
@@ -21,12 +48,13 @@ function FlippingCard() {
     };
 
     window.addEventListener("mousemove", handleMouseMove);
+    fire();
 
     // Cleanup the event listener when the component unmounts
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [router.isReady]);
 
   const canvasStyles = {
     position: "fixed",
@@ -47,7 +75,16 @@ function FlippingCard() {
     refAnimationInstance.current &&
       refAnimationInstance.current({
         ...opts,
-        origin: { y: 0.6 },
+        origin: { x: 0 },
+        angle: 60,
+        particleCount: Math.floor(200 * particleRatio),
+        colors: ["#cb9b51", "#f6e27a", "#f6f2c0", "#d43d19", "#e47853"],
+      });
+    refAnimationInstance.current &&
+      refAnimationInstance.current({
+        ...opts,
+        origin: { x: 1 },
+        angle: 120,
         particleCount: Math.floor(200 * particleRatio),
         colors: ["#cb9b51", "#f6e27a", "#f6f2c0", "#d43d19", "#e47853"],
       });
@@ -82,10 +119,12 @@ function FlippingCard() {
     });
   }, [makeShot]);
 
-  setInterval(() => {
-    fire();
-  }, 2000);
-
+  // setInterval(() => {
+  // fire();
+  // }, 3000);
+  if (!ticketDetails) {
+    return <div>Loading...</div>;
+  }
   return (
     <div className="flex justify-center items-center w-screen h-screen">
       <ReactCanvasConfetti refConfetti={getInstance} style={canvasStyles} />
@@ -101,8 +140,8 @@ function FlippingCard() {
         gyroscope={true}
         className="relative cursor-none p-1 glare overflow-clip rounded-3xl parallax-effect-glare-scale"
       >
-        <div class="blob"></div>
-        <div class="fakeblob"></div>
+        <div className="blob"></div>
+        <div className="fakeblob"></div>
 
         <Image
           className="rounded-3xl shadow-xl"
@@ -113,21 +152,21 @@ function FlippingCard() {
         />
         <div className="absolute bottom-6 left-1/3 -translate-x-1/2 inner-element">
           <h1 className="text-xs font-reospec tracking-widest text-gradient">
-            cllz9bpyi0005tb90x6ustr5z
+            {id}
           </h1>
         </div>
-        <div className="absolute top-6 left-10 right-0 p-4 text-space inner-element">
+        <div className="absolute top-6 left-10 right-0 text-space inner-element">
           <h1 className="text-5xl font-dela font-regular text-gradient">
-            Kabilan G
+            {ticketDetails.name}
           </h1>
           <p className="text-xs mt-4 w-2/3 font-montserrat">
-            Loyola ICAM College of Engineering and Technology, Chennai, Tamil
-            Nadu
+            {ticketDetails.department}
+          </p>
+          <p className="text-xs mt-2 w-7/12 font-montserrat">
+            {ticketDetails.institution}
           </p>
         </div>
       </Tilt>
     </div>
   );
 }
-
-export default FlippingCard;
