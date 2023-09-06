@@ -84,7 +84,7 @@ const Hero = () => {
                 />
               </svg>
 
-              <p className="bg-gradient-to-r from-green-700 via-lime-900 to-lime-500 bg-clip-text text-transparent text-center text-4xl font-bold tracking-[.5rem] mt-5">
+              <p className="text-center text-4xl font-bold tracking-[.5rem] mt-5">
                 2K23
               </p>
 

@@ -10,7 +10,7 @@ const jsonData = [
     imageURI: "/img/cosmicchronicles.png",
     date: " 16th September 2023",
     time: " 10:00 am to 11:30 am",
-    location: "Case tools Laboratory (H23) / CIS Laboratory (J14)",
+    location: "Case Tools Lab (H23) and CIS Lab (J14)",
     organizers: "Ashik S and Rithika R  ( Contact No : 9445387601 )",
     description: "Paper Presentation",
     registerationlink:
@@ -25,7 +25,7 @@ Rules:
   4. Submitted papers must be in IEEE format.
   5. Papers must not be published before anywhere or be under consideration for  publication in any journal or conference.
   6. Each team presents their paper for 7 minutes followed by a Q&A session for 3 minutes.
-  7. Plagiarism is not allowed. Original works only.
+  7. Plagiarism is not allowed (above 40%). Original works only.
   8. Abstract should not exceed more than 250 words.
   9. Paper should have a minimum of 6 pages and should not exceed 15 pages.
   10. Soft-copies of the submitted paper must be in standard document formats (docx, doc, pdf).
@@ -35,8 +35,23 @@ Rules:
   14. may not be a part of multiple teams for the same event.
   15. The paper is to be attached to the mail ----- with the subject as the title of the paper.
   16. The mail must contain - name of authors, college names and departments, phone numbers, and email addresses. 
-  
 
+TRACKS:
+  1. Services, protocols and architectures
+  2. Middleware, frameworks and distributed IoT devices
+  3. Dynamic adaptation of IoT networks
+  4. Opportunistic networking techniques
+  5. IoT big data networks
+  6. Congestion, scalability, and reliability
+  7. Web of Things
+  8. IoT communication technologies
+  9. Sensing, ac‌tuation and analytics
+  10. Human Interaction with IoT
+  11. Multi-platform integration and interoperability
+  12. Real-world Deployments, and Testbeds
+  13. AI and machine learning for the IoT
+  14. Data streaming architectures and machine learning analytics
+  
 Notes :
   1. Registration closes by 5th September 2023.
   2. Email your abstracts to flairit@licet.ac.in (Subject: “Abstract- TITLE” eg: “Abstract- Smart Garbage Management with IOT”) on or before 5th September 2023.
@@ -57,10 +72,11 @@ Notes :
     imageURI: "/img/stellarhunt.jpg",
     date: "16th September 2023",
     time: "1:30 pm to 3:00 pm",
-    location: "RDBMS (A21)",
+    location: "RDBMS Laboratory (A21)",
     organizers: "Regis R and Arul Danica ( Contact : 9150206627 ) ",
     description: "Hunt your celestial treasure!",
-    registerationlink: "https://forms.gle/wK8oCDiM9yWcx54g7",
+    registerationlink:
+      "https://docs.google.com/forms/d/e/1FAIpQLSd_DfIN1W9c-YCo04bByXb6rmDJahOAm4K1p7z15ypjFygAEg/viewform?usp=sf_link",
     rules: `
 Rules:
   1. All personal electronic devices (smartphones, smartwatches, laptops) are strictly prohibited during the mission.
@@ -89,10 +105,11 @@ Event Guidelines:
     imageURI: "/img/celestialcanvas.jpg",
     date: "16th September 2023",
     time: "11:00 am to 12:30 pm",
-    location: "RDBMS (A21) ",
+    location: "RDBMS Laboratory (A21)",
     organizers: "Keerthanaa B and Nadheedha S ( Contact : 7871123619 )",
     description: "UI Design",
-    registerationlink: "https://forms.gle/77tq9qaguXsTdxdL9",
+    registerationlink:
+      "https://docs.google.com/forms/d/e/1FAIpQLScCc2ou-uXwPyWMGsAjmHh6nBqPSwPwapl8Wrxd-IXuWVrAjQ/viewform?usp=sf_link",
     rules: `
 Rules:
   1. Participants must use Figma for design.
@@ -121,10 +138,11 @@ Event Guidelines:
     imageURI: "/img/memescape.jpeg",
     date: "16th September 2023",
     time: "1:30 pm to 3:00 pm",
-    location: "CIS (J14)",
+    location: "CIS Laboratory (J14)",
     organizers: "Sowmya B and Ludo Kirsten Roy V (Contact : 8925050777 )",
     description: "Meme Creation",
-    registerationlink: "https://forms.gle/G8y2HCNmRG2nwBnVA",
+    registerationlink:
+      "https://docs.google.com/forms/d/e/1FAIpQLSdirCgnjoq4UlO_bnkhFfcTJLjtVLdR5vmbjtpmen4cLq5N4g/viewform?usp=sf_link",
     rules: `
 Rules:
   1. Canva is the only application that should be used for meme creation.
@@ -152,10 +170,11 @@ Event Guidelines:
     location: "Data Structures Laboratory (A22)  ",
     organizers: "Afrid Ariff H and Avanthika Y ( Contact : 9360959577 )",
     description: "Code Debugging",
-    registerationlink: "https://forms.gle/FzfNkyV9RGjwQfpVA",
+    registerationlink:
+      "https://docs.google.com/forms/d/e/1FAIpQLSeBly1RdeFS9MjobcJWaQXGh8hygeTnRopbKOpSQfXMwg012Q/viewform?usp=sf_link",
     rules: `
 Rules:
-  1. Register for the event as an individual participant .
+  1. Register for the event as an individual participant.
   2. Participants are allowed to bring their own laptops.
   3. The allotted time for each round is 45 minutes.
   4. There will be 15 minutes of break between the two rounds.
@@ -193,7 +212,8 @@ Evaluation Criteria:
     location: "Drawing Room (G32)",
     organizers: "Kaviena Sharon and Judith (Contact: 7871123619 ) ",
     description: "Tech Charades",
-    registerationlink: "https://forms.gle/1Vd5xyGgmasT1mtR6",
+    registerationlink:
+      "https://docs.google.com/forms/d/e/1FAIpQLSczkvSwIE_21_FSsdxbe-19ajKIvb9GqaWuhTKwM8PUSyzy7g/viewform?usp=sf_link",
     rules: `
 Rules:
   1. The given word should be Enacted by one individual. 
@@ -236,7 +256,8 @@ Evaluation Criteria:
     time: "11:30 am to 1:00 pm",
     location: "Classroom (I31) ",
     description: " Business pitch ",
-    registerationlink: "https://forms.gle/Sju3YvYxMLeBtibM8",
+    registerationlink:
+      "https://docs.google.com/forms/d/e/1FAIpQLSc0JVbRMkg0Xg9EZAUXxIvhC4mhHeBt24pgbJl6kovYjSjmgg/viewform?usp=sf_link",
     organizers: "Ananth and Ajay Roshan ( Contact : 7200126971 )",
     rules: `
 Rules:
@@ -274,7 +295,8 @@ Event Guidelines:
     organizers:
       "Nivedita Ramatoti and Chrispin Sheena ( Contact : 7418921212 )",
     description: "Technical Connection",
-    registerationlink: "https://forms.gle/vk2hqQnGqD8qtxdG8",
+    registerationlink:
+      "https://docs.google.com/forms/d/e/1FAIpQLSc0WFuedTBhq-WCORqNML5eraM5zMO662WWVirtcMnvh-Ttbg/viewform?usp=sf_link",
     rules: `
 Rules:
   1. Each team can have a maximum of 3 members.
@@ -345,9 +367,18 @@ export default function EventPage() {
               <div className="my-3 m-4 uppercase text-xl font-bold space-y-5">
                 <p className="text-4xl mb-4 sm:mb-3">{eventDeets.name} </p>
                 <div></div>
-                <a
+                {/* <a
                   target="_blank"
                   href={`${eventDeets.registerationlink}`}
+                  className="py-2 px-4 border border-gray-400 rounded shadow"
+                  onClick={() => {
+                    setReg(true);
+                  }}
+                >
+                  Register <span aria-hidden="true">&rarr;</span>
+                </a> */}
+                <a
+                  href="#regform"
                   className="py-2 px-4 border border-gray-400 rounded shadow"
                   onClick={() => {
                     setReg(true);
@@ -374,10 +405,7 @@ export default function EventPage() {
               {reg && eventDeets?.registerationlink && (
                 <>
                   <section id="regform">
-                    <div
-                      className="w-full p-10 border sm:p-0 rounded"
-                      id="#regform"
-                    >
+                    <div className="w-full border sm:p-0 rounded" id="#regform">
                       <iframe
                         // scrolling="no"
                         src={`${eventDeets?.registerationlink}/viewform`}
