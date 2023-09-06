@@ -10,13 +10,41 @@ const variants = {
 
 export default function Events() {
   const elist = [
-    "Cosmic Chronicles",
-    "Pitch Black",
-    "Space Complexity",
-    "Celestial Canvas",
-    "Memescape",
-    "Tesseract",
-    "Constellation",
+    {
+      name: "Cosmic Chronicles",
+      description:
+        "A competition to enhance your ability in the art of academic writing or making papers on your project or research works and present it in front of the jury.",
+    },
+    {
+      name: "Pitch Black",
+      description:
+        "Introduce your story idea and define your angle. Grab the attention of your audience. take them on a clear and logical journey. Leave them with a compelling call to action.",
+    },
+    {
+      name: "Space Complexity",
+      description:
+        "Unravel the mysteries of code errors as you navigate through the vast expanse of technical challenges, bringing your programs back from the brink of 'debugger not found' errors.",
+    },
+    {
+      name: "Celestial Canvas",
+      description:
+        "Explore the frontiers of user experience as we meld futuristic aesthetics with cutting-edge usability, taking inspiration from the visually captivating world of the Interstellar movie.",
+    },
+    {
+      name: "Orbiting Oddities",
+      description:
+        "A competition where you'll bend space and code to create hilarious Interstellar-themed memes that transcend dimensions of humor and technology.",
+    },
+    {
+      name: "Tesseract",
+      description:
+        "An exciting version of dumb-charades in which the team has to enact the given technical terms.",
+    },
+    {
+      name: "Constellation",
+      description:
+        "Decode the cosmos one image at a time, connecting visual cues to unravel technical terms and celestial concepts in this interactive and engaging challenge",
+    },
   ];
 
   const itemsRef = useRef([]);
@@ -34,7 +62,7 @@ export default function Events() {
               }}
             >
               <div className="opacity-0 group-hover:opacity-100 text-[#ffffff74] group-hover/btn:text-white group-hover/btn:text-[120%] transition-all inline-block">
-                {i}
+                {i.name}
               </div>
               <span className="group-hover/btn:text-[170%] text-[#ffffff74] group-hover/btn:text-white transition-all ml-2">
                 •
@@ -65,11 +93,9 @@ export default function Events() {
               viewport={{ once: true }}
               variants={variants}
             >
-              <RandoText text={title} delay={0.7} />
+              <RandoText text={title.name} delay={0.7} />
               <div className="text-2xl w-[75%] lg:w-1/2 font-serif font-normal mt-5 tracking-normal leading-tight">
-                Insert event description here Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Esse cumque, animi amet
-                voluptates, iste assumenda consequatur
+                {title.description}
               </div>
             </motion.div>
           </div>
