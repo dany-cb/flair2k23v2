@@ -53,7 +53,7 @@ TRACKS:
   14. Data streaming architectures and machine learning analytics
   
 Notes :
-  1. Registration closes by 5th September 2023.
+  1. Registration closes by 10th September 2023.
   2. Email your abstracts to flairit@licet.ac.in (Subject: “Abstract- TITLE” eg: “Abstract- Smart Garbage Management with IOT”) on or before 5th September 2023.
   3. By 8th September, the shortlisted teams will be informed (via email and phone call)
   4. Shortlisted teams must submit the ppt slides and paper by 11 September 2023.
