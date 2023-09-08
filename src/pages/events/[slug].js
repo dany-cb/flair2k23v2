@@ -173,34 +173,39 @@ Event Guidelines:
     registerationlink:
       "https://docs.google.com/forms/d/e/1FAIpQLSeBly1RdeFS9MjobcJWaQXGh8hygeTnRopbKOpSQfXMwg012Q/viewform?usp=sf_link",
     rules: `
-Rules:
-  1. Register for the event as an individual participant.
-  2. Participants are allowed to bring their own laptops.
-  3. The allotted time for each round is 45 minutes.
-  4. There will be 15 minutes of break between the two rounds.
-  5. Any participant resorting to unfair practices will be disqualified.
+    Rules:
+    1. Register for the event as an individual participant .
+    2. Participants are allowed to bring their own laptops.
+    3. The allotted time for each round is 45 minutes.
+    4. There will be 15 minutes of break between the two rounds.
+    5. Any participant resorting to unfair practices will be disqualified.
 
-Event Guidelines:
-  There will be two rounds of coding.
+    Event Guidelines:
+    There will be two rounds of coding.
 
-    ROUND 1: 
-      1. There will be 9 questions of varying difficulty levels- easy, medium and hard.
-      2. Each question has a predetermined score based on the difficulty level.
-      3. Top 10 participants with the highest scores will qualify for the next round. This is subject to change based on the number of candidates. 
-      4. The participant's score is determined by the number of test cases that their code submission successfully passes.
-      5. Participants are ranked by score. If two or more participants achieve the same score, then the tie is broken by the total time taken on successful submissions.
+    ROUND 1:
+    ● There will be 9 questions of varying difficulty levels- easy, medium and hard.
+    ● Each question has a predetermined score based on the difficulty level.
+    ● Top 10 participants with the highest scores will qualify for the next round. This is subject
+    to change based on the number of candidates.
+    ● The participant's score is determined by the number of test cases that their code
+    submission successfully passes.
+    ● Participants are ranked by score. If two or more participants achieve the same score,
+    then the tie is broken by the total time taken on successful submissions.
 
-    ROUND 2: 
-      1. There will be two questions in this round- one medium and one hard question.
-      2. The questions in this round will be space-themed.
-      3. A participant's score is determined by the number of test cases that their code submission successfully passes.
-      4. Time and space complexity will be used to break ties. 
-      5. Time taken on successful submissions will be used to resolve further ties.
-
-Evaluation Criteria:
-  For each question, participants will be awarded points based on the difficulty level:
-    Easy - 10 points,  Medium - 15 points, Hard - 20 points
-
+    ROUND 2:
+    ● There will be three space-themed challenges- Decryption, Shortest Path, and Optimal
+    Search.
+    ● Participants must solve the challenges sequentially with each challenge being a
+    prerequisite for the next.
+    ● Time and space complexity will be used to break ties.
+    ● Time taken on successful submissions will be used to resolve further ties.
+    
+    Evaluation Criteria:
+    For each question in round 1, participants will be awarded points based on the difficulty level:
+    Easy- 10 points
+    Medium- 15 points
+    Hard- 20 points
 
 `,
   },
