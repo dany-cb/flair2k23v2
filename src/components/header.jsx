@@ -42,18 +42,10 @@ const Header = () => {
             <Link href="/#contact" className="text-lg font-semibold leading-6 ">
               Contact us
             </Link>
-            <Link
-              href="https://licet.ac.in/information-technology/"
-              className="text-lg font-semibold leading-6 "
-            >
-              About us
+            <Link href="/faq" className="text-lg font-semibold leading-6 ">
+              FAQ
             </Link>
           </div>
-          {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm font-semibold leading-6">
-              Promo <span aria-hidden="true">&rarr;</span>
-            </a>
-          </div> */}
         </nav>
         {mobileMenuOpen && (
           <div className="lg:hidden">
@@ -105,11 +97,11 @@ const Header = () => {
                       Contact
                     </Link>
                     <Link
-                      href="https://licet.ac.in/information-technology/"
+                      href="/faq"
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      About Us
+                      FAQ
                     </Link>
                   </div>
                 </div>
