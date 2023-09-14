@@ -115,7 +115,8 @@ const register = () => {
     const { data, error } = await request(options);
     if (error) {
       alert("Something went wrong");
-    } else {
+    } else if (data) {
+      alert("Successfully registered");
       router.push("/");
     }
   }
