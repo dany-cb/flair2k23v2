@@ -76,7 +76,7 @@ export default function FAQ() {
                       <p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-400">
                         College ID card and Bonafide certificate are necessary
                         to be brought on the day of the symposium to participate
-                        in Flair2k22.
+                        in Flair2k23.
                       </p>
                     </motion.details>
 
