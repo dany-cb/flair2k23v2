@@ -4,9 +4,9 @@ import { AiTwotonePhone } from "react-icons/ai";
 const Contact = () => {
   return (
     <footer
-      className="bg-white rounded-lg shadow dark:bg-gray-900 mt-4"
+      className="bg-white rounded-lg shadow dark:bg-gray-900 mt-4 md:mt-4 lg:mt-28"
       id="contact"
-      style={{ backgroundColor: "#030014" }}
+      style={{ backgroundColor: " #0b0908 " }}
     >
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
