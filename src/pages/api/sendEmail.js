@@ -23,7 +23,7 @@ const handler = async (req, res) => {
           console.log(imageUrl, "isjd");
         }
         //     await sendMail(
-        //       "TEST",
+        //       "Welcome onbaord - Flair 2k23",
         //       "crispin.24it@licet.ac.in",
         //       `
         //       <table
