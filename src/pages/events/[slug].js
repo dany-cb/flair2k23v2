@@ -267,10 +267,9 @@ Evaluation Criteria:
     rules: `
 Rules:
   1. Each team shall have a maximum of 4 members.
-  2. Topic will be given 2 days prior to the event.
-  3. Teams should prepare the presentation based on the topic.
-  4. The pitch must be in English.
-  5. The Judges decision is final.
+  2. Teams should prepare the presentation based on the topic.
+  3. The pitch must be in English.
+  4. The Judges decision is final.
 
 Event Guidelines:
   The event has two Rounds.
